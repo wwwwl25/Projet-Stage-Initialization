@@ -28,11 +28,13 @@
 
     <!-- Nav links -->
     <div class="nav-links">
-        <a href="index.php">Home</a>
-        <a href="#">Vitamins & Supplements</a>
-        <a href="#">Wellness & Immunity</a>
-        <a href="#">Kids & Pregnancy</a>
-        <a href="#">Beauty & Skin</a>
-        <a href="#">More</a>
+        <a href="index.php">Accueil</a>
+        <a href="#">Boutique</a>
+        <a href="#">Vitamines</a>
+        <a href="#">Minerals</a>
+        <a href="#">Herbal Supplements</a>
+        <a href="#">Proteins & Powders</a>
+        <a href="#">Support</a>
+
     </div>
 </nav>
