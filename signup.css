@@ -8,13 +8,14 @@
 }
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
+
     min-height: 100vh;
-    background: #f9f9f9;
+    flex-direction: column;
 }
 .wrapper {
+    align-self: center;
     position: relative;
+    margin-top: 5em;
     width: 800px;
     height: 500px;
     background: linear-gradient(90deg, #54880e, #f2f2f2);

@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Login & Registration Form HTML CSS | Codehal</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="nav-bar.css">
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
+    <?php require 'nav-bar.php';?>
     <div class="wrapper">
-        <img src="img.png" alt="wwwwwwwwwwwww">
+        <img src="Images/img.png" alt="leaves">
         <h2 class="text-right">Welcome</h2>
         <div class="form-wrapper login">
-            <form action="index.php" method="post">
+            <form action="signup.php" method="post">
                 <h2>Login</h2>
                 <div class="input-box">
                     <span class="icon">
@@ -36,7 +38,7 @@
             </form>
         </div>
         <div class="form-wrapper register">
-            <form action="index.php" method="post">
+            <form action="signup.php" method="post">
                 <h2>Registration</h2>
                 <div class="input-box">
                     <span class="icon">
@@ -65,6 +67,6 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="script.js"></script>
+    <script src="signup.js"></script>
 </body>
 </html>
