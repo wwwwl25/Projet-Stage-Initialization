@@ -9,10 +9,12 @@ use PHPMailer\PHPMailer\Exception;
 require 'PHPMailer-master/src/Exception.php';
 require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
-
+try{
 $sql = new Connect();
 $db = $sql->conn;
-
+}catch(mysqli_sql_exception $e){
+    echo "Can't connect to the database .";
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
