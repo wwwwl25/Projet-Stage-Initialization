@@ -28,7 +28,7 @@
 
     <!-- Nav links -->
     <div class="nav-links">
-        <a href="#">Home</a>
+        <a href="index.php">Home</a>
         <a href="#">Vitamins & Supplements</a>
         <a href="#">Wellness & Immunity</a>
         <a href="#">Kids & Pregnancy</a>
