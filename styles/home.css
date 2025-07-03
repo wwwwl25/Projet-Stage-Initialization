@@ -8,7 +8,7 @@
 }
 
 .main-content{
-    padding:2em 3em;
+    padding:2em 1.25em;
 }
 .splide__slide {
     height: 500px;
@@ -48,4 +48,145 @@
 .splide__slide.is-active .slide-text {
     opacity: 1;
     transform: translateY(0);
+}
+
+.category-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 2rem;
+}
+
+.category-card {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    border-radius: 5px;
+    align-items: flex-end;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+.card-content {
+    background: rgba(0, 0, 0, 0.45);
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+}
+.prodcuts-preview, .best-seller{
+    margin: 2rem 0rem;
+    text-align: center;
+}
+.prodcuts-preview h1, .best-seller h1{
+    font-size: 1.75em;
+}
+
+.about{
+    background:#EDEAD3;
+    padding: 2em 1em;
+    text-align: center;
+
+}
+.about h1{
+    text-transform: uppercase;
+    color: #B9A16B;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-bottom: 0.3em;
+}
+.about h2{
+    color: rgb(0,0,0,0.85);
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.features{
+    margin-top: 2.5em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:1.75em;
+    color: #403f3f;
+}
+.feature{
+    font-weight: 300;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+}
+.feature i{
+    font-size: 2.2rem;
+}
+.fa-check{
+    border: 2px #403f3f solid;
+    border-radius: 50%;
+    padding: 0.3em 0.4em;
+}
+.feature h3{
+    font-weight: 400;
+
+    font-size: 1.55em;
+}
+.feature p{
+    color: rgba(0, 0, 0, 0.74);
+    font-size: 1.1em;
+    line-height: 1.55em;
+}
+.promotion{
+    background: url("../images/promotions.webp") no-repeat ;
+    background-position: center;
+    background-size: cover;
+
+    padding: 4em  2em;
+}
+.promotion p{
+        color: #BAA472;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.promotion h1{
+    font-weight: 400;
+    margin-top: 0.7em;
+    font-size: 1.6em;
+    margin-bottom: 1.5em;
+}
+.promotion a{
+    color: #BAA472;
+    padding: 1em 2em;
+    text-decoration:none;
+    border: 1.5px solid #BAA472;;
+}
+/* desktop layout */
+@media (min-width: 768px) {
+    .category-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .category-card {
+        width: 23%;
+        height: 250px;
+    }
+
+    .card-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .card-content p {
+        font-size: 1rem;
+    }
 }

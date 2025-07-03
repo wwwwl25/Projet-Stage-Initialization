@@ -1,9 +1,13 @@
 <nav class="navbar">
     <div class="navbar-container">
-        <!-- Logo -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
         <a href="/Projet-Stage-Initialization/" class="logo">VitamineDyalk</a>
 
-        <!-- Search bar -->
         <div class="search-wrapper">
             <input type="text" placeholder="Search for vitamins, supplements..." class="search-input"/>
             <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -11,7 +15,6 @@
             </svg>
         </div>
 
-        <!-- Icons -->
         <div class="icons">
             <a href="views/signup_signin.view.php" title="signup/login">
                 <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -26,7 +29,6 @@
         </div>
     </div>
 
-    <!-- Nav links -->
     <div class="nav-links">
         <a href="/Projet-Stage-Initialization/">Accueil</a>
         <a href="#">Boutique</a>
@@ -35,6 +37,15 @@
         <a href="#">Herbal Supplements</a>
         <a href="#">Proteins & Powders</a>
         <a href="#">Support</a>
-
     </div>
 </nav>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+
+</script>
