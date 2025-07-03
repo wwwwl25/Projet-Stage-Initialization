@@ -7,13 +7,16 @@
         </div>
 
         <a href="/Projet-Stage-Initialization/" class="logo">VitamineDyalk</a>
-
-        <div class="search-wrapper">
-            <input type="text" placeholder="Search for vitamins, supplements..." class="search-input"/>
-            <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103 10.5a7.5 7.5 0 0013.15 6.15z"/>
-            </svg>
+        <div class="nav-links">
+            <a href="/Projet-Stage-Initialization/">Accueil</a>
+            <a href="#">Boutique</a>
+            <a href="#">Vitamines</a>
+            <a href="#">Minerals</a>
+            <a href="#">Herbal Supplements</a>
+            <a href="#">Proteins & Powders</a>
+            <a href="#">Support</a>
         </div>
+
 
         <div class="icons">
             <a href="views/signup_signin.view.php" title="signup/login">
@@ -29,15 +32,7 @@
         </div>
     </div>
 
-    <div class="nav-links">
-        <a href="/Projet-Stage-Initialization/">Accueil</a>
-        <a href="#">Boutique</a>
-        <a href="#">Vitamines</a>
-        <a href="#">Minerals</a>
-        <a href="#">Herbal Supplements</a>
-        <a href="#">Proteins & Powders</a>
-        <a href="#">Support</a>
-    </div>
+
 </nav>
 
 <script>
