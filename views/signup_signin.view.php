@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in</title>
-    <link rel="stylesheet" href="nav-bar.css">
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="../styles/nav-bar.css">
+    <link rel="stylesheet" href="../styles/signup.css">
 </head>
 <body>
-    <?php require 'nav-bar.php';?>
+    <?php require 'utilities/nav-bar.php';?>
     <div class="wrapper">
-        <img src="Images/img.png" alt="leaves">
+        <img src="../images/img.png" alt="leaves">
         <h2 class="text-right">Welcome</h2>
         <div class="form-wrapper login">
-            <form action="signin.php" method="post">
+            <form action="../controllers/signin.php" method="post">
                 <h2>Login</h2>
                 <div class="input-box">
                     <span class="icon">
@@ -47,7 +47,7 @@
             </form>
         </div>
         <div class="form-wrapper register">
-            <form action="signup.php" method="post">
+            <form action="../controllers/signup.php" method="post">
                 <h2>Registration</h2>
                 <div class="input-box">
                     <span class="icon">
@@ -76,7 +76,7 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="signup.js"></script>
+    <script src="../scripts/signup.js"></script>
 
 </body>
 </html>

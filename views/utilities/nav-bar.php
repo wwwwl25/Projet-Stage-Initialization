@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="navbar-container">
         <!-- Logo -->
-        <a href="index.php" class="logo">VitamineDyalk</a>
+        <a href="/Projet-Stage-Initialization/" class="logo">VitamineDyalk</a>
 
         <!-- Search bar -->
         <div class="search-wrapper">
@@ -13,7 +13,7 @@
 
         <!-- Icons -->
         <div class="icons">
-            <a href="signup_signin.view.php" title="signup/login">
+            <a href="views/signup_signin.view.php" title="signup/login">
                 <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M5.121 17.804A4 4 0 016 15.5h12a4 4 0 01.879 2.304M12 11a4 4 0 100-8 4 4 0 000 8z" />
                 </svg>
@@ -28,7 +28,7 @@
 
     <!-- Nav links -->
     <div class="nav-links">
-        <a href="index.php">Accueil</a>
+        <a href="/Projet-Stage-Initialization/">Accueil</a>
         <a href="#">Boutique</a>
         <a href="#">Vitamines</a>
         <a href="#">Minerals</a>
