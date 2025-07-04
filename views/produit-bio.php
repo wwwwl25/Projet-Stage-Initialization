@@ -6,7 +6,7 @@ $connect = new Connect();
 $db = $connect->conn;
 
 // Requête SQL
-$sql = "SELECT name, description, prix, photo FROM vitamines";
+$sql = "SELECT name, description, prix, photo FROM `produits bio`";
 $result = mysqli_query($db, $sql);
 
 // Vérification des erreurs de requête
