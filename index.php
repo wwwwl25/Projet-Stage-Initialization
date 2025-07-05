@@ -38,29 +38,37 @@
         <section class="category-section">
             <div class="category-card" style="background-image: url('images/vitamnes.png');">
                 <div class="card-content">
-                    <h3>Vitamines</h3>
-                    <p>Boost your immunity and energy naturally.</p>
+                  <a href="views/vitamine.php" class="card-content" style="text-decoration: none; color: inherit;">
+    <h3>Vitamines</h3>
+    <p>Boost your immunity and energy naturally.</p>
+</a>
+
+            
                 </div>
             </div>
-
             <div class="category-card" style="background-image: url('images/minerals.webp');">
                 <div class="card-content">
+                    <a href="views/serum.php" class="card-content" style="text-decoration: none; color: inherit;">
                     <h3>Minerals</h3>
                     <p>Essential nutrients for bones, muscles, and health.</p>
+                    </a>
                 </div>
             </div>
-
             <div class="category-card" style="background-image: url('images/herbal_supplements.jpg');">
                 <div class="card-content">
+     <a href="views/produit-bio.php" class="card-content" style="text-decoration: none; color: inherit;">
                     <h3>Herbal Supplements</h3>
                     <p>Natural remedies for balance and wellness.</p>
+</a>
                 </div>
             </div>
 
             <div class="category-card" style="background-image: url('images/proteins_powders.webp');">
                 <div class="card-content">
+                       <a href="views/maquillage.php" class="card-content" style="text-decoration: none; color: inherit;">
                     <h3>Proteins & Powders</h3>
                     <p>Support muscle growth and recovery.</p>
+</a>
                 </div>
             </div>
         </section>
@@ -113,7 +121,9 @@
         <section class="promotion">
             <p>Jusqu’à -30%</p>
             <h1>Promotions</h1>
-            <a href="#">Voir tout</a>
+            <a href=" #">Voir tout</a>
+
+
         </section>
     </main>
     <?php require 'views/utilities/footer.php'?>

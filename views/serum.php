@@ -1,5 +1,5 @@
 <?php
-require_once 'Connect.php';
+require_once '../Connect.php';
 
 // Connexion à la base de données
 $connect = new Connect();

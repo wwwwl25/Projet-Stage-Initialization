@@ -89,3 +89,25 @@ h1 {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     cursor: pointer;
 }
+.buy-button {
+    margin-top: 15px;
+    width: 100%; 
+    padding: 12px 0;
+    background-color: #ff6600; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; 
+}
+
+.buy-button:hover {
+    background-color: #e65c00; 
+    transform: scale(1.05); 
+}
