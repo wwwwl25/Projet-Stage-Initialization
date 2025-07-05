@@ -91,9 +91,8 @@ h1 {
 }
 .buy-button {
     margin-top: 15px;
-    width: 100%; 
-    padding: 12px 0;
-    background-color: #ff6600; 
+    padding: 20px 50px;
+    background-color: #ff6600;
     color: white;
     border: none;
     border-radius: 5px;
@@ -104,8 +103,14 @@ h1 {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 8px; 
+    gap: 8px;
+    text-decoration: none; 
 }
+.buy-button:hover {
+    background-color: #e65c00;
+    transform: scale(1.03);
+}
+
 
 .buy-button:hover {
     background-color: #e65c00; 
