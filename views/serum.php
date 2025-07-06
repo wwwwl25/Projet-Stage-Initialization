@@ -29,7 +29,9 @@ if (mysqli_num_rows($result) > 0) {
         echo "<img src='" . htmlspecialchars($row["photo"]) . "' alt='Image'>";
         echo "<div class='product-name'>" . htmlspecialchars($row["name"]) . "</div>";
         echo "<div class='product-price'>" . htmlspecialchars($row["prix"]) . "€</div>";
-        echo "<a href='details.php?id=" . urlencode($row["id"]) . "' class='buy-button'>🛒 Acheter</a>";
+    echo "<a href='details.php?id=" . urlencode($row["id"]) . "&table=serums' class='buy-button'>🛒 Acheter</a>";
+
+
         echo "</div>";
     }
 } else {
@@ -37,6 +39,6 @@ if (mysqli_num_rows($result) > 0) {
 }
 ?>
 </div>
-
+ <script src="../scripts/recherche.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 require_once '../Connect.php';
 
-if (!isset($_GET['id'])) {
+if (!isset($_GET['id']) || !isset($_GET['table'])) {
     die("Produit introuvable.");
 }
 
@@ -9,7 +9,12 @@ $connect = new Connect();
 $db = $connect->conn;
 
 $id = intval($_GET['id']);
-$sql = "SELECT name, description, prix, photo FROM vitamines WHERE id = $id";
+$table = $_GET['table'];
+if (!in_array($table, ['serums', 'vitamines','bio','maquillage'])) {
+    die("Table invalide.");
+}
+
+$sql = "SELECT name, description, prix, photo FROM $table WHERE id = $id";
 $result = mysqli_query($db, $sql);
 
 if (!$result || mysqli_num_rows($result) === 0) {
