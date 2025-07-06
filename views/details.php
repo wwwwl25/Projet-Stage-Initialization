@@ -29,15 +29,23 @@ $product = mysqli_fetch_assoc($result);
 <head>
     <meta charset="UTF-8">
     <title>Détail du produit</title>
+    <link rel="stylesheet" href="../styles/details.css">
 </head>
 <body>
 
-<h1><?php echo htmlspecialchars($product["name"]); ?></h1>
-<img src="<?php echo htmlspecialchars($product["photo"]); ?>" alt="Image" width="300">
-<p><strong>Description :</strong> <?php echo htmlspecialchars($product["description"]); ?></p>
-<p><strong>Prix :</strong> <?php echo htmlspecialchars($product["prix"]); ?> €</p>
-
-<a href="../index.php">Retour aux produits</a>
+<div class="product-detail">
+    <div class="image-section">
+        <img src="<?php echo htmlspecialchars($product["photo"]); ?>" alt="Image produit">
+    </div>
+    <div class="info-section">
+        <h1><?php echo htmlspecialchars($product["name"]); ?></h1>
+        <p class="price"><?php echo htmlspecialchars($product["prix"]); ?> €</p>
+        <p class="description"><?php echo htmlspecialchars($product["description"]); ?></p>
+        <button class="add-to-cart">Ajouter au panier</button>
+        <br><br>
+        <a href="../index.php" class="back-link">Retour aux produits</a>
+    </div>
+</div>
 
 </body>
 </html>
