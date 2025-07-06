@@ -30,14 +30,55 @@
     position: absolute;
     top: 60px;
     left: 30px;
-
+    margin-left: 1.3em;
     font-size: 2rem;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
+.ordinary .slide-text{
+    width: 30px;
+    top:40%;
+    transform: translateY(-50%);
+}
+.priorin h2 {
+    color: #BDAF88;
+    font-weight: 400;
+    text-shadow: 1px 1px 1px black;
+}
+.priorin .highlight-text{
+    text-transform: uppercase;
+    display: block;
+    margin: 1.5em 0em;
+}
+.priorin a{
+    color: black;
+    text-decoration: none;
+    padding: 0.75em 1em;
+    font-size: 0.75em;
+    border: 3px solid black;
+}
+.vitamines h2{
+    width:200px;    font-weight: 500;
 
-
+    font-size: 0.8em;
+}
+.vitamines .highlight-text{
+    display: block;
+    margin: 1em 0em;
+    color: #333;
+    width: 300px;
+    font-weight: 400;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+.vitamines a{
+    text-decoration: none;
+    color: white;
+    background: #B9A16B ;
+    font-size: 0.65em;
+    padding: 0.5em 0.75em;
+}
 /*.highlight-text {*/
 /*    background-color: rgba(0, 0, 0, 1); !* or any color *!*/
 /*    color: white;*/
@@ -49,42 +90,67 @@
     opacity: 1;
     transform: translateY(0);
 }
-
 .category-section {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    padding-top: 2rem;
+    gap: 2rem;
+    margin-top: 2em;
 }
 
 .category-card {
+    position: relative;
     background-size: cover;
     background-position: center;
-    height: 200px;
-    position: relative;
     overflow: hidden;
-    display: flex;
-    border-radius: 5px;
-    align-items: flex-end;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    color: #fff;
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .card-content {
-    background: rgba(0, 0, 0, 0.45);
-    width: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 1.5rem;
+    color: white;
     height: 100%;
-    padding: 1rem;
+}
+
+.card-content .category-label {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #dfd1ba;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
 }
 
 .card-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: white;
 }
 
-.card-content p {
+.card-content .category-desc {
     font-size: 1rem;
+    color: antiquewhite;
+    margin-bottom: 1rem;
 }
+
+.discover-btn {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.discover-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
 .prodcuts-preview, .best-seller{
     margin: 2rem 0rem;
     text-align: center;
@@ -116,7 +182,7 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap:1.75em;
     color: #403f3f;
 }
@@ -127,6 +193,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 1em;
+    /*width: 400px;*/
 }
 .feature i{
     font-size: 2.2rem;
@@ -188,5 +255,58 @@
 
     .card-content p {
         font-size: 1rem;
+    }
+}
+@media (min-width: 694px){
+    .feature{
+        width: 300px;
+    }
+    .ordinary .slide-text{
+        width: 100%;
+        top:40%;
+        font-size: 3em;
+        transform: translateY(-50%);
+    }
+    .priorin h2 {
+        color: #BDAF88;
+        font-weight: 400;
+        text-shadow: 1px 1px 1px black;
+    }
+    .priorin .highlight-text{
+        text-transform: uppercase;
+        display: block;
+        margin: 1.5em 0em;
+    }
+    .priorin a{
+        color: black;
+        text-decoration: none;
+        padding: 0.75em 1em;
+        font-size: 0.75em;
+        border: 3px solid black;
+    }
+    .vitamines.slide-text{
+        left:73%;
+    }
+    .vitamines h2{
+          font-weight: 500;
+    width: 500px;
+        font-size: 1.2em;
+    }
+    .vitamines .highlight-text{
+        display: block;
+        margin: 1em 0em;
+        color: #333;
+        font-weight: 400;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+    .vitamines a{
+        width: 800px;
+
+        text-decoration: none;
+        color: white;
+        background: #B9A16B ;
+        font-size: 0.8em;
+        padding: 0.5em 0.75em;
     }
 }

@@ -21,48 +21,61 @@
                 <ul class="splide__list">
                     <li class="splide__slide">
                         <img src="images/priorin.jpg" />
-                        <div class="slide-text"> <span class="highlight-text">Stronger hair, naturally.</span>
+                        <div class="slide-text priorin">
+                            <h2>Priorin</h2>
+                            <span class="highlight-text">Stronger hair, naturally.</span>
+                            <a href="#">Achetez</a>
                         </div>
                     </li>
                     <li class="splide__slide">
                         <img src=images/banner-vitamine.jpg />
-                        <div class="slide-text"> <span class="highlight-text">Energy. Immunity. Focus.</span></div>
+                        <div class="slide-text vitamines">
+                            <h2>Boost your immune system</h2>
+                            <span class="highlight-text">Vitamine E, Calcium and more</span>
+                            <a href="#">Achetez</a>
+
+                        </div>
                     </li>
-                    <li class="splide__slide">
+                    <li class="splide__slide ordinary">
                         <img src="images/banner-the-ordinary.jpg" />
-                        <div class="slide-text"> <span class="highlight-text">Glow without compromise.</span></div>
+                        <div class="slide-text"> <span class="highlight-text">The Ordinary.</span></div>
                     </li>
                 </ul>
             </div>
         </section>
         <section class="category-section">
-            <div class="category-card" style="background-image: url('images/vitamnes.png');">
+            <div class="category-card" style="background-image: url('images/produit-bio.jpg');">
                 <div class="card-content">
-                    <h3>Vitamines</h3>
-                    <p>Boost your immunity and energy naturally.</p>
+                    <p class="category-label">PRODUIT BIO</p>
+                    <h3>BIO</h3>
+                    <p class="category-desc">Crème, Maquillage, Soin et autres.</p>
+                    <a href="#" class="discover-btn">Découvrir</a>
+                </div>
+            </div>
+            <div class="category-card" style="background-image: url('images/banner-vitamine.jpg');">
+                <div class="card-content">
+                    <p class="category-label">COMPLEMENT ALIMENTAIRE</p>
+                    <h3>Vitamnes</h3>
+                    <p class="category-desc">Viatmine A, Viatmine C, Viatmine D</p>
+                    <a href="#" class="discover-btn">Découvrir</a>
+                </div>
+            </div>    <div class="category-card" style="background-image: url('images/serums.jpg');">
+                <div class="card-content">
+                    <p class="category-label">Soin</p>
+                    <h3>Serums</h3>
+                    <p class="category-desc">Soin visage et peau.</p>
+                    <a href="#" class="discover-btn">Découvrir</a>
+                </div>
+            </div>
+            <div class="category-card" style="background-image: url('images/makeup.jpg');">
+                <div class="card-content">
+                    <p class="category-label">MAQUILLAGE</p>
+                    <h3>Makeup</h3>
+                    <p class="category-desc">Produits pour le visage, les yeux et les lèvres.</p>
+                    <a href="#" class="discover-btn">Découvrir</a>
                 </div>
             </div>
 
-            <div class="category-card" style="background-image: url('images/minerals.webp');">
-                <div class="card-content">
-                    <h3>Minerals</h3>
-                    <p>Essential nutrients for bones, muscles, and health.</p>
-                </div>
-            </div>
-
-            <div class="category-card" style="background-image: url('images/herbal_supplements.jpg');">
-                <div class="card-content">
-                    <h3>Herbal Supplements</h3>
-                    <p>Natural remedies for balance and wellness.</p>
-                </div>
-            </div>
-
-            <div class="category-card" style="background-image: url('images/proteins_powders.webp');">
-                <div class="card-content">
-                    <h3>Proteins & Powders</h3>
-                    <p>Support muscle growth and recovery.</p>
-                </div>
-            </div>
         </section>
         <section class="prodcuts-preview">
             <h1>Some of our products</h1>

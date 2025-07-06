@@ -11,9 +11,9 @@
             <a href="/Projet-Stage-Initialization/">Accueil</a>
             <a href="#">Boutique</a>
             <a href="#">Vitamines</a>
-            <a href="#">Minerals</a>
-            <a href="#">Herbal Supplements</a>
-            <a href="#">Proteins & Powders</a>
+            <a href="#">Makeup</a>
+            <a href="#">Bio</a>
+            <a href="#">Serums</a>
             <a href="#">Support</a>
         </div>
 
