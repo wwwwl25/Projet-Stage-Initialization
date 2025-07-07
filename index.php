@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/nav-bar.css">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/product.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
 </head>
@@ -26,15 +27,15 @@
 <!--                            <a href="">Achetez</a>-->
 <!--                        </div>-->
 <!--                    </li>-->
-                    <li class="splide__slide">
-                        <img src=images/banner-vitamine.jpg />
-                        <div class="slide-text vitamines">
-                            <h2>Boost your immune system</h2>
-                            <span class="highlight-text">Vitamine E, Calcium and more</span>
-                            <a href="/Projet-Stage-Initialization/views/vitamine.php">Achetez</a>
-
-                        </div>
-                    </li>
+<!--                    <li class="splide__slide">-->
+<!--                        <img src=images/banner-vitamine.jpg />-->
+<!--                        <div class="slide-text vitamines">-->
+<!--                            <h2>Boost your immune system</h2>-->
+<!--                            <span class="highlight-text">Vitamine E, Calcium and more</span>-->
+<!--                            <a href="/Projet-Stage-Initialization/views/vitamine.php">Achetez</a>-->
+<!---->
+<!--                        </div>-->
+<!--                    </li>-->
                     <li class="splide__slide ordinary">
                         <img src="images/banner-the-ordinary.jpg" />
                         <div class="slide-text"> <span class="highlight-text">The Ordinary.</span></div>

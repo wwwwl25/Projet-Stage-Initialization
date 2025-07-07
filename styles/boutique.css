@@ -1,0 +1,22 @@
+body,html{
+    overflow-x:hidden;
+}
+main{
+    margin-top: 7em;
+    text-align: center;
+}
+.products-container{
+    margin: 0 auto;
+    max-width: 1500px;
+    margin-bottom: 3em;
+}
+.text{
+    margin-bottom: 1em;
+}
+.text h1{
+    font-size: 2.5em;
+    font-weight: 400;
+}
+.search-input{
+    margin-bottom: 1.3em;
+}

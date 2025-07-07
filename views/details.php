@@ -29,6 +29,9 @@ $product = mysqli_fetch_assoc($result);
 <head>
     <meta charset="UTF-8">
     <title>Détail du produit</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../styles/details.css">
     <link rel="stylesheet" href="../styles/nav-bar.css">
     <link rel="stylesheet" href="../styles/footer.css">
@@ -42,7 +45,7 @@ $product = mysqli_fetch_assoc($result);
     </div>
     <div class="info-section">
         <h1><?php echo htmlspecialchars($product["name"]); ?></h1>
-        <p class="price"><?php echo htmlspecialchars($product["prix"]); ?> €</p>
+        <p class="price"><?php echo htmlspecialchars(preg_replace('/[^0-9]/', '',$product["prix"]) . "MAD"); ?> </p>
         <p class="description"><?php echo htmlspecialchars($product["description"]); ?></p>
         <button class="add-to-cart">Ajouter au panier</button>
         <br><br>
