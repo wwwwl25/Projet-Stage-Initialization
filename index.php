@@ -178,7 +178,7 @@
         <section class="promotion">
             <p>Jusqu’à -30%</p>
             <h1>Promotions</h1>
-            <a href="#">Voir tout</a>
+            <a href="/Projet-Stage-Initialization/views/promotions.php">Voir tout</a>
         </section>
     </main>
     <?php require 'views/utilities/footer.php'?>
