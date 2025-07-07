@@ -7,6 +7,7 @@
     <title>Sign in</title>
     <link rel="stylesheet" href="../styles/nav-bar.css">
     <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <body>
     <?php require 'utilities/nav-bar.php';?>

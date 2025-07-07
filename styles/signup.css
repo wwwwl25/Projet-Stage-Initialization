@@ -13,9 +13,10 @@ body {
     flex-direction: column;
 }
 .wrapper {
-    align-self: center;
+    margin:3em auto;
+    margin-top: 8em;
+
     position: relative;
-    margin-top: 5em;
     width: 800px;
     height: 500px;
     background: linear-gradient(90deg, #54880e, #f2f2f2);
