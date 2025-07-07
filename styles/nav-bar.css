@@ -34,7 +34,6 @@ body {
     justify-content: space-between;
     position: relative;
 }
-
 /* hamburger menu on left */
 .hamburger {
     display: flex;

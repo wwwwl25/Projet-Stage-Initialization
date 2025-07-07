@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <nav class="navbar">
     <div class="navbar-container">
         <div class="hamburger" id="hamburger">
@@ -6,20 +8,22 @@
             <div></div>
         </div>
 
-        <a href="/Projet-Stage-Initialization/" class="logo">VitamineDyalk</a>
+        <a href="/Projet-Stage-Initialization/" class="logo">
+            JTR<i class="fa-solid fa-leaf"></i>SHOP
+        </a>
         <div class="nav-links">
             <a href="/Projet-Stage-Initialization/">Accueil</a>
-            <a href="#">Boutique</a>
-            <a href="#">Vitamines</a>
-            <a href="#">Makeup</a>
-            <a href="#">Bio</a>
-            <a href="#">Serums</a>
-            <a href="#">Support</a>
+            <a href="/Projet-Stage-Initialization/views/vitamine.php">Vitamines</a>
+            <a href="/Projet-Stage-Initialization/views/maquillage.php">Makeup</a>
+            <a href="/Projet-Stage-Initialization/views/produit-bio.php">Bio</a>
+            <a href="/Projet-Stage-Initialization/views/serum.php">Serums</a>
         </div>
 
 
         <div class="icons">
+
             <a href="views/signup_signin.view.php" title="signup/login">
+
                 <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M5.121 17.804A4 4 0 016 15.5h12a4 4 0 01.879 2.304M12 11a4 4 0 100-8 4 4 0 000 8z" />
                 </svg>

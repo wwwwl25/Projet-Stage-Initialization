@@ -23,6 +23,7 @@
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
-        <p>Copyright ©2025 VitamineDyalk</p>
+        <p>Copyright ©2025 JTR<i class="fa-solid fa-leaf"></i>SHOP
+        </p>
     </div>
 </footer>

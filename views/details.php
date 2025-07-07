@@ -30,8 +30,11 @@ $product = mysqli_fetch_assoc($result);
     <meta charset="UTF-8">
     <title>Détail du produit</title>
     <link rel="stylesheet" href="../styles/details.css">
+    <link rel="stylesheet" href="../styles/nav-bar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <body>
+<?php require_once "utilities/nav-bar.php"?>
 
 <div class="product-detail">
     <div class="image-section">
@@ -46,6 +49,7 @@ $product = mysqli_fetch_assoc($result);
         <a href="../index.php" class="back-link">Retour aux produits</a>
     </div>
 </div>
+<?php require_once "utilities/footer.php"?>
 
 </body>
 </html>

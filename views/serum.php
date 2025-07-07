@@ -14,9 +14,11 @@ $result = mysqli_query($db, $sql);
     <meta charset="UTF-8">
     <title>Produits</title>
     <link rel="stylesheet" href="../styles/produit.css">
+    <link rel="stylesheet" href="../styles/nav-bar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <body>
-
+    <?php require_once "utilities/nav-bar.php"?>
 <h1>Nos Produits</h1>
 <div style="text-align: center; margin-bottom: 20px;">
     <input type="text" id="searchInput" placeholder="Rechercher un produit" style="padding: 10px; width: 300px; font-size: 16px;">
@@ -38,7 +40,10 @@ if (mysqli_num_rows($result) > 0) {
     echo "Aucun produit trouvé.";
 }
 ?>
+
 </div>
- <script src="../scripts/recherche.js"></script>
+    <?php require_once "utilities/footer.php"?>
+
+    <script src="../scripts/recherche.js"></script>
 </body>
 </html>

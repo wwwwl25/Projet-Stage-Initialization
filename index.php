@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="styles/footer.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <?php require 'views/utilities/nav-bar.php' ?>
@@ -19,20 +18,20 @@
         <section id="image-slider" class="splide">
             <div class="splide__track">
                 <ul class="splide__list">
-                    <li class="splide__slide">
-                        <img src="images/priorin.jpg" />
-                        <div class="slide-text priorin">
-                            <h2>Priorin</h2>
-                            <span class="highlight-text">Stronger hair, naturally.</span>
-                            <a href="#">Achetez</a>
-                        </div>
-                    </li>
+<!--                    <li class="splide__slide">-->
+<!--                        <img src="images/priorin.jpg" />-->
+<!--                        <div class="slide-text priorin">-->
+<!--                            <h2>Priorin</h2>-->
+<!--                            <span class="highlight-text">Stronger hair, naturally.</span>-->
+<!--                            <a href="">Achetez</a>-->
+<!--                        </div>-->
+<!--                    </li>-->
                     <li class="splide__slide">
                         <img src=images/banner-vitamine.jpg />
                         <div class="slide-text vitamines">
                             <h2>Boost your immune system</h2>
                             <span class="highlight-text">Vitamine E, Calcium and more</span>
-                            <a href="#">Achetez</a>
+                            <a href="/Projet-Stage-Initialization/views/vitamine.php">Achetez</a>
 
                         </div>
                     </li>
@@ -49,22 +48,22 @@
                     <p class="category-label">PRODUIT BIO</p>
                     <h3>BIO</h3>
                     <p class="category-desc">Crème, Maquillage, Soin et autres.</p>
-                    <a href="#" class="discover-btn">Découvrir</a>
+                    <a href="/Projet-Stage-Initialization/views/produit-bio.php" class="discover-btn">Découvrir</a>
                 </div>
             </div>
             <div class="category-card" style="background-image: url('images/banner-vitamine.jpg');">
                 <div class="card-content">
                     <p class="category-label">COMPLEMENT ALIMENTAIRE</p>
-                    <h3>Vitamnes</h3>
+                    <h3>Vitamines</h3>
                     <p class="category-desc">Viatmine A, Viatmine C, Viatmine D</p>
-                    <a href="#" class="discover-btn">Découvrir</a>
+                    <a href="/Projet-Stage-Initialization/views/vitamine.php" class="discover-btn">Découvrir</a>
                 </div>
             </div>    <div class="category-card" style="background-image: url('images/serums.jpg');">
                 <div class="card-content">
                     <p class="category-label">Soin</p>
                     <h3>Serums</h3>
                     <p class="category-desc">Soin visage et peau.</p>
-                    <a href="#" class="discover-btn">Découvrir</a>
+                    <a href="/Projet-Stage-Initialization/views/serum.php" class="discover-btn">Découvrir</a>
                 </div>
             </div>
             <div class="category-card" style="background-image: url('images/makeup.jpg');">
@@ -72,7 +71,7 @@
                     <p class="category-label">MAQUILLAGE</p>
                     <h3>Makeup</h3>
                     <p class="category-desc">Produits pour le visage, les yeux et les lèvres.</p>
-                    <a href="#" class="discover-btn">Découvrir</a>
+                    <a href="/Projet-Stage-Initialization/views/maquillage.php" class="discover-btn">Découvrir</a>
                 </div>
             </div>
 
@@ -82,8 +81,12 @@
             <?php require_once "controllers/product_preview.php"?>
             <div class="products-container">
             <?php foreach($products as $product): ?>
-                <a href='views/details.php?id=<?=urlencode($product[1]["id"])?>&table=<?=$product[0]?>'>
+
                 <div class="product-card">
+                    <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                    <a href='views/details.php?id=<?=urlencode($product[1]["id"])?>&table=<?=$product[0]?>'>
                     <img src="<?= $product[1]["photo"]?>" alt="" />
                     <div class="product-info">
                         <p class="product-title">
@@ -91,8 +94,9 @@
                         </p>
                         <p class="product-price"> <?= preg_replace('/[^0-9]/', '', $product[1]["prix"]) . "MAD"?></p>
                     </div>
+                    </a>
                 </div>
-                </a>
+
 
             <?php endforeach;?>
             </div>
