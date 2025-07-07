@@ -77,10 +77,26 @@
             </div>
 
         </section>
-        <section class="prodcuts-preview">
+        <section class="products-preview">
             <h1>Some of our products</h1>
-            <div class="product">Product  1 : Waiting ...</div>
-            <div class="product">Productr 2 :  Waiting ...</div>
+            <?php require_once "controllers/product_preview.php"?>
+            <div class="products-container">
+            <?php foreach($products as $product): ?>
+                <a href='views/details.php?id=<?=urlencode($product[1]["id"])?>&table=<?=$product[0]?>'>
+                <div class="product-card">
+                    <img src="<?= $product[1]["photo"]?>" alt="" />
+                    <div class="product-info">
+                        <p class="product-title">
+                            <?= $product[1]["name"]?>
+                        </p>
+                        <p class="product-price"> <?= preg_replace('/[^0-9]/', '', $product[1]["prix"]) . "MAD"?></p>
+                    </div>
+                </div>
+                </a>
+
+            <?php endforeach;?>
+            </div>
+
         </section>
         <section class="about">
             <h1>Votre boutique en ligne préférée au Maroc</h1>
@@ -117,11 +133,37 @@
         </section>
         <section class="best-seller">
             <h1>Best Sellers</h1>
-            <div class="product">Product  1 : Waiting ...</div>
-            <div class="product">Productr 2 :  Waiting ...</div><div class="product">Product  1 : Waiting ...</div>
-            <div class="product">Productr 2 :  Waiting ...</div><div class="product">Product  1 : Waiting ...</div>
-            <div class="product">Productr 2 :  Waiting ...</div><div class="product">Product  1 : Waiting ...</div>
-            <div class="product">Productr 2 :  Waiting ...</div>
+            <?php require_once "controllers/product_preview.php";
+                $products = array($serum[rand(0, count($serum)-1)],
+                    $serum[rand(0, count($serum)-1)],
+                    $serum[rand(0, count($serum)-1)],
+                    $vita[rand(0, count($vita)-1)],
+                    $vita[rand(0, count($vita)-1)],
+                    $vita[rand(0, count($vita)-1)],
+                    $makeup[rand(0, count($makeup)-1)],
+                    $bio[rand(0, count($bio)-1)],
+                    $bio[rand(0, count($bio)-1)],
+                    $bio[rand(0, count($bio)-1)],
+
+                    );
+
+            ?>
+            <div class="products-container">
+                <?php foreach($products as $product): ?>
+                    <a href='views/details.php?id=<?=urlencode($product[1]["id"])?>&table=<?=$product[0]?>'>
+                        <div class="product-card">
+                            <img src="<?= $product[1]["photo"]?>" alt="" />
+                            <div class="product-info">
+                                <p class="product-title">
+                                    <?= $product[1]["name"]?>
+                                </p>
+                                <p class="product-price"> <?= preg_replace('/[^0-9]/', '', $product[1]["prix"]) . "MAD"?></p>
+                            </div>
+                        </div>
+                    </a>
+
+                <?php endforeach;?>
+            </div>
         </section>
         <section class="promotion">
             <p>Jusqu’à -30%</p>

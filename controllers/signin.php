@@ -1,13 +1,5 @@
 <?php
 require_once 'Connect.php';
-function dd($var)
-{
-    echo "<pre>";
-
-    var_dump($var);
-    echo "</pre>";
-    die();
-}
 try{
     $sql = new Connect();
     $db = $sql->conn;
