@@ -133,6 +133,9 @@ body {
 .nav-links a:hover::before{
     width: 100%;
 }
+.active::before{
+    width: 100% !important;
+}
 @media (min-width: 694px){
     .navbar-container{
         padding-left:2em ;

@@ -12,12 +12,13 @@
             JTR<i class="fa-solid fa-leaf"></i>SHOP
         </a>
         <div class="nav-links">
-            <a href="/Projet-Stage-Initialization/">Accueil</a>
-            <a href="/Projet-Stage-Initialization/views/vitamine.php">Vitamines</a>
-            <a href="/Projet-Stage-Initialization/views/maquillage.php">Makeup</a>
-            <a href="/Projet-Stage-Initialization/views/produit-bio.php">Bio</a>
-            <a href="/Projet-Stage-Initialization/views/serum.php">Serums</a>
-            <a href="/Projet-Stage-Initialization/views/promotions.php">Promotions</a>
+
+            <a href="/Projet-Stage-Initialization/" class="<?php echo $_SERVER['REQUEST_URI'] == "/Projet-Stage-Initialization/" ? 'active' : ''?>">Accueil</a>
+            <a href="/Projet-Stage-Initialization/views/vitamine.php" class="<?php echo $_SERVER['REQUEST_URI'] == "/Projet-Stage-Initialization/views/vitamine.php" ? 'active' : ''?>">Vitamines</a>
+            <a href="/Projet-Stage-Initialization/views/maquillage.php" class="<?php echo $_SERVER['REQUEST_URI'] == "/Projet-Stage-Initialization/views/maquillage.php" ? 'active' : ''?>">Makeup</a>
+            <a href="/Projet-Stage-Initialization/views/produit-bio.php" class="<?php echo $_SERVER['REQUEST_URI'] == "/Projet-Stage-Initialization/views/produit-bio.php" ? 'active' : ''?>">Bio</a>
+            <a href="/Projet-Stage-Initialization/views/serum.php" class="<?php echo $_SERVER['REQUEST_URI'] == "/Projet-Stage-Initialization/views/serum.php" ? 'active' : ''?>">Serums</a>
+            <a href="/Projet-Stage-Initialization/views/promotions.php" class="<?php echo $_SERVER['REQUEST_URI'] == "/Projet-Stage-Initialization/views/promotions.php" ? 'active' : ''?>">Promotions</a>
         </div>
 
 
