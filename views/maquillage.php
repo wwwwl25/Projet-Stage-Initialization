@@ -45,7 +45,7 @@ $result = mysqli_query($db, $sql);
                             <p class="product-title">
                                 <?= $row["name"]?>
                             </p>
-                            <p class="product-price"> <?= preg_replace('/[^0-9]/', '',$row["prix"]) . "MAD"?></p>
+                            <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $row["prix"]) . " MAD" ?></p>
                         </div>
                         </a>
 
