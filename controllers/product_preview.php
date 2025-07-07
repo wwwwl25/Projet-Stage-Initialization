@@ -12,14 +12,7 @@ function preview($tableName, $conn){
     }
     return $r;
 }
-function dd($var)
-{
-    echo "<pre>";
 
-    var_dump($var);
-    echo "</pre>";
-    die();
-}
 $serum = preview("serums", $conn);
 
 $vita = preview("vitamines", $conn);

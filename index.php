@@ -78,7 +78,8 @@
         </section>
         <section class="products-preview">
             <h1>Some of our products</h1>
-            <?php require_once "controllers/product_preview.php"?>
+            <?php require_once "controllers/product_preview.php"
+            ?>
             <div class="products-container">
             <?php foreach($products as $product): ?>
 
@@ -138,24 +139,28 @@
         <section class="best-seller">
             <h1>Best Sellers</h1>
             <?php require_once "controllers/product_preview.php";
-                $products = array($serum[rand(0, count($serum)-1)],
-                    $serum[rand(0, count($serum)-1)],
-                    $serum[rand(0, count($serum)-1)],
-                    $vita[rand(0, count($vita)-1)],
-                    $vita[rand(0, count($vita)-1)],
-                    $vita[rand(0, count($vita)-1)],
-                    $makeup[rand(0, count($makeup)-1)],
-                    $bio[rand(0, count($bio)-1)],
-                    $bio[rand(0, count($bio)-1)],
-                    $bio[rand(0, count($bio)-1)],
+                $products = array($serum[2],
+                    $serum[0],
+                    $serum[3],
+                    $vita[4],
+                    $vita[6],
+                    $vita[2],
+                    $makeup[0],
+                    $bio[1],
+                    $bio[3],
+                    $bio[5],
 
                     );
+                shuffle($products);
 
             ?>
             <div class="products-container">
                 <?php foreach($products as $product): ?>
                     <a href='views/details.php?id=<?=urlencode($product[1]["id"])?>&table=<?=$product[0]?>'>
                         <div class="product-card">
+                            <button class="add-to-cart">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
                             <img src="<?= $product[1]["photo"]?>" alt="" />
                             <div class="product-info">
                                 <p class="product-title">
