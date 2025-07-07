@@ -157,11 +157,12 @@
             ?>
             <div class="products-container">
                 <?php foreach($products as $product): ?>
-                    <a href='views/details.php?id=<?=urlencode($product[1]["id"])?>&table=<?=$product[0]?>'>
                         <div class="product-card">
                             <button class="add-to-cart">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
+                            <a href='views/details.php?id=<?=urlencode($product[1]["id"])?>&table=<?=$product[0]?>'>
+
                             <img src="<?= $product[1]["photo"]?>" alt="" />
                             <div class="product-info">
                                 <p class="product-title">
@@ -169,8 +170,9 @@
                                 </p>
                                 <p class="product-price"> <?= preg_replace('/[^0-9]/', '', $product[1]["prix"]) . "MAD"?></p>
                             </div>
+                            </a>
                         </div>
-                    </a>
+
 
                 <?php endforeach;?>
             </div>
