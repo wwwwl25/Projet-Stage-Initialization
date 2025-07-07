@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php require 'utilities/nav-bar.php';?>
+    <main>
     <div class="wrapper">
         <img src="../images/img.png" alt="leaves">
         <h2 class="text-right">Welcome</h2>
@@ -74,6 +75,9 @@
             </form>
         </div>
     </div>
+    </main>
+    <?php require_once "utilities/footer.php"?>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="../scripts/signup.js"></script>

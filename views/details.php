@@ -38,7 +38,7 @@ $product = mysqli_fetch_assoc($result);
 </head>
 <body>
 <?php require_once "utilities/nav-bar.php"?>
-
+<main>
 <div class="product-detail">
     <div class="image-section">
         <img src="<?php echo htmlspecialchars($product["photo"]); ?>" alt="Image produit">
@@ -52,6 +52,7 @@ $product = mysqli_fetch_assoc($result);
         <a href="../index.php" class="back-link">Retour aux produits</a>
     </div>
 </div>
+</main>
 <?php require_once "utilities/footer.php"?>
 
 </body>

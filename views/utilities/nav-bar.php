@@ -17,6 +17,7 @@
             <a href="/Projet-Stage-Initialization/views/maquillage.php">Makeup</a>
             <a href="/Projet-Stage-Initialization/views/produit-bio.php">Bio</a>
             <a href="/Projet-Stage-Initialization/views/serum.php">Serums</a>
+            <a href="/Projet-Stage-Initialization/views/promotions.php">Promotions</a>
         </div>
 
 

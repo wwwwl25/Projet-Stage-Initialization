@@ -30,7 +30,7 @@ $result = mysqli_query($db, $sql);
     <div class="search-input">
         <input type="text" id="searchInput" placeholder="Rechercher un produit" style="padding: 10px; width: 300px; font-size: 16px;">
     </div>
-    <div class="products-container" id="left">
+    <div class="products-container" >
     <?php  if (mysqli_num_rows($result) > 0) : ?>
      <?php while ($row = mysqli_fetch_assoc($result)) : ?>
             <a href='details.php?id=<?=urlencode($row["id"])?>&table=vitamines'>
@@ -54,8 +54,9 @@ $result = mysqli_query($db, $sql);
 
     <?php endif; ?>
     </div>
-<?php require_once "utilities/footer.php"?>
     </main>
+<?php require_once "utilities/footer.php"?>
+
     <script src="../scripts/recherche.js"></script>
 </body>
 </html>
