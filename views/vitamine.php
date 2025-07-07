@@ -33,11 +33,12 @@ $result = mysqli_query($db, $sql);
     <div class="products-container" >
     <?php  if (mysqli_num_rows($result) > 0) : ?>
      <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-            <a href='details.php?id=<?=urlencode($row["id"])?>&table=vitamines'>
+
                 <div class="product-card">
                     <button class="add-to-cart">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </button>
+                    <a href='details.php?id=<?=urlencode($row["id"])?>&table=vitamines'>
                     <img src="<?= $row["photo"]?>" alt="" />
                     <div class="product-info">
                         <p class="product-title">
@@ -45,8 +46,9 @@ $result = mysqli_query($db, $sql);
                         </p>
                         <p class="product-price"> <?= preg_replace('/[^0-9]/', '',$row["prix"]) . "MAD"?></p>
                     </div>
+                    </a>
                 </div>
-            </a>
+
 
         <?php endwhile; ?>
     <?php else : ?>
