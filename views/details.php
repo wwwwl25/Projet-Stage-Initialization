@@ -45,7 +45,8 @@ $product = mysqli_fetch_assoc($result);
     </div>
     <div class="info-section">
         <h1><?php echo htmlspecialchars($product["name"]); ?></h1>
-        <p class="price"><?php echo htmlspecialchars(preg_replace('/[^0-9]/', '',$product["prix"]) . "MAD"); ?> </p>
+        <p class="price"><?php echo htmlspecialchars(preg_replace('/[^0-9.]/', '',$product["prix"]) . "MAD"); ?> </p>
+
         <p class="description"><?php echo htmlspecialchars($product["description"]); ?></p>
         <button class="add-to-cart">Ajouter au panier</button>
         <br><br>

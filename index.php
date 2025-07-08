@@ -94,7 +94,7 @@
                         <p class="product-title">
                             <?= $product[1]["name"]?>
                         </p>
-                        <p class="product-price"> <?= preg_replace('/[^0-9]/', '', $product[1]["prix"]) . "MAD"?></p>
+                        <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $product[1]["prix"]) . " MAD" ?></p>
                     </div>
                     </a>
                 </div>
@@ -168,7 +168,8 @@
                                 <p class="product-title">
                                     <?= $product[1]["name"]?>
                                 </p>
-                                <p class="product-price"> <?= preg_replace('/[^0-9]/', '', $product[1]["prix"]) . "MAD"?></p>
+                                <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $product[1]["prix"]) . " MAD" ?></p>
+
                             </div>
                             </a>
                         </div>
