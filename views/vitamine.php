@@ -1,6 +1,6 @@
 <?php
 require_once '../controllers/product_display.php';
-$result = product_display("vitamine");
+$result = product_display("vitamines");
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ $result = product_display("vitamine");
 
     <div class="products-container" >
     <?php  if (mysqli_num_rows($result) > 0) : ?>
-     <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
 
                 <div class="product-card">
                     <button class="add-to-cart">
