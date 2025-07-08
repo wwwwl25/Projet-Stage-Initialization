@@ -36,9 +36,9 @@
             <?php foreach ($promotions as $promotion) : ?>
             <?php foreach ($promotion as $p) : ?>
                 <div class="product-card">
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </button>
+                    <?php $cartText = "<i class='fa-solid fa-cart-shopping'></i>";
+                    require "utilities/add_to_cart.php"
+                    ?>
                     <div class="discount">
                         <p class="discount">
                             <?= $p['promotion'] ?>

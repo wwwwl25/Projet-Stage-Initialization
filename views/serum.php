@@ -13,6 +13,8 @@ $result = product_display("serums");
     <link rel="stylesheet" href="../styles/product.css">
     <link rel="stylesheet" href="../styles/nav-bar.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="../styles/boutique.css">
 </head>
 <body>
@@ -35,9 +37,9 @@ $result = product_display("serums");
         <?php  if (mysqli_num_rows($result) > 0) : ?>
             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                     <div class="product-card">
-                        <button class="add-to-cart">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </button>
+                        <?php $cartText = "<i class='fa-solid fa-cart-shopping'></i>";
+                        require "utilities/add_to_cart.php"
+                        ?>
                         <div class="discount">
                             <p class="discount-text">
                                 <?= $row["promotion"]?>

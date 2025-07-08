@@ -83,7 +83,7 @@
             <h1>Some of our products</h1>
 
             <div class="products-container">
-            <?php foreach($products as $product): ?>
+            <?php foreach($products as $row): ?>
 
                 <div class="product-card">
                     <button class="add-to-cart">
@@ -91,17 +91,17 @@
                     </button>
                     <div class="discount">
                         <p class="discount-text">
-                            <?= $product[1]["promotion"]?>
+                            <?= $row[1]["promotion"]?>
                         </p>
                     </div>
 
-                    <a href='views/details.php?id=<?=urlencode($product[1]["id"])?>&table=<?=$product[0]?>'>
-                    <img src="<?= $product[1]["photo"]?>" alt="" />
+                    <a href='views/details.php?id=<?=urlencode($row[1]["id"])?>&table=<?=$row[0]?>'>
+                    <img src="<?= $row[1]["photo"]?>" alt="" />
                     <div class="product-info">
                         <p class="product-title">
-                            <?= $product[1]["name"]?>
+                            <?= $row[1]["name"]?>
                         </p>
-                        <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $product[1]["prix"]) . " MAD" ?></p>
+                        <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $row[1]["prix"]) . " MAD" ?></p>
                     </div>
                     </a>
                 </div>
@@ -163,19 +163,19 @@
 
             ?>
             <div class="products-container">
-                <?php foreach($products as $product): ?>
+                <?php foreach($products as $row): ?>
                         <div class="product-card">
                             <button class="add-to-cart">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
-                            <a href='views/details.php?id=<?=urlencode($product[1]["id"])?>&table=<?=$product[0]?>'>
+                            <a href='views/details.php?id=<?=urlencode($row[1]["id"])?>&table=<?=$row[0]?>'>
 
-                            <img src="<?= $product[1]["photo"]?>" alt="" />
+                            <img src="<?= $row[1]["photo"]?>" alt="" />
                             <div class="product-info">
                                 <p class="product-title">
-                                    <?= $product[1]["name"]?>
+                                    <?= $row[1]["name"]?>
                                 </p>
-                                <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $product[1]["prix"]) . " MAD" ?></p>
+                                <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $row[1]["prix"]) . " MAD" ?></p>
 
                             </div>
                             </a>

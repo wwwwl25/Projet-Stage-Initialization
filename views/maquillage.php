@@ -36,9 +36,9 @@ $result = product_display("maquillage");
         <?php  if (mysqli_num_rows($result) > 0) : ?>
             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                     <div class="product-card">
-                        <button class="add-to-cart">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </button>
+                        <?php $cartText = "<i class='fa-solid fa-cart-shopping'></i>";
+                        require "utilities/add_to_cart.php"
+                        ?>
                         <div class="discount">
                             <p class="discount-text">
                                 <?= $row["promotion"]?>

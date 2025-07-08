@@ -52,7 +52,9 @@ $product = mysqli_fetch_assoc($result);
         </p>
 
         <p class="description"><?php echo htmlspecialchars($product["description"]); ?></p>
-        <button class="add-to-cart">Ajouter au panier</button>
+        <?php $cartText = "Ajouter au panier";
+        require "utilities/add_to_cart.php"
+        ?>
         <br><br>
         <a href="../index.php" class="back-link">Retour aux produits</a>
     </div>
