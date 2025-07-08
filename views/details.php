@@ -14,7 +14,7 @@ if (!in_array($table, ['serums', 'vitamines','bio','maquillage'])) {
     die("Table invalide.");
 }
 
-$sql = "SELECT name, description, prix, photo FROM $table WHERE id = $id";
+$sql = "SELECT * FROM $table WHERE id = $id";
 $result = mysqli_query($db, $sql);
 
 if (!$result || mysqli_num_rows($result) === 0) {
@@ -45,7 +45,11 @@ $product = mysqli_fetch_assoc($result);
     </div>
     <div class="info-section">
         <h1><?php echo htmlspecialchars($product["name"]); ?></h1>
-        <p class="price"><?php echo htmlspecialchars(preg_replace('/[^0-9.]/', '',$product["prix"]) . "MAD"); ?> </p>
+        <p class="price"><?php echo htmlspecialchars(preg_replace('/[^0-9.]/', '',$product["prix"]) . "MAD"); ?>
+            <span class="details-discount">
+                <?= $product["promotion"]?>
+            </span>
+        </p>
 
         <p class="description"><?php echo htmlspecialchars($product["description"]); ?></p>
         <button class="add-to-cart">Ajouter au panier</button>

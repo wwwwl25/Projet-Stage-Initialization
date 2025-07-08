@@ -3,7 +3,7 @@ require 'Connect.php';
 $db = new Connect();
 $conn = $db->conn;
 function preview($tableName, $conn){
-    $query = "SELECT id, name, description, prix, photo FROM $tableName";
+    $query = "SELECT * FROM $tableName";
     $result = mysqli_query($conn, $query);
     $r = [];
 

@@ -109,6 +109,7 @@
   display: flex;
   justify-content: flex-end; 
   margin-bottom: 20px;
+    margin-right: 9%;
 }
 
 #sortSelect {
@@ -138,7 +139,7 @@
 #sortSelect::-ms-expand {
   display: none;
 }
-.promotion{
+.discount{
     margin-right: auto;
     font-size: 0.9em;
     color: indianred;

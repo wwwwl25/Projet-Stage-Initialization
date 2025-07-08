@@ -25,11 +25,11 @@ $result = product_display("serums");
         <input type="text" id="searchInput" placeholder="Rechercher un produit" style="padding: 10px; width: 300px; font-size: 16px;">
     </div>
              <div class="filter-container">
-  <select id="sortSelect">
-    <option value="">-- Trier par prix --</option>
-    <option value="asc">Prix croissant</option>
-    <option value="desc">Prix décroissant</option>
-  </select>
+      <select id="sortSelect">
+        <option value="">-- Trier par prix --</option>
+        <option value="asc">Prix croissant</option>
+        <option value="desc">Prix décroissant</option>
+      </select>
 </div>
     <div class="products-container" >
         <?php  if (mysqli_num_rows($result) > 0) : ?>
@@ -38,8 +38,8 @@ $result = product_display("serums");
                         <button class="add-to-cart">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </button>
-                        <div class="promotion">
-                            <p class="promotion-text">
+                        <div class="discount">
+                            <p class="discount-text">
                                 <?= $row["promotion"]?>
                             </p>
                         </div>

@@ -1,3 +1,5 @@
+<?php require_once "controllers/product_preview.php"
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -79,8 +81,7 @@
         </section>
         <section class="products-preview">
             <h1>Some of our products</h1>
-            <?php require_once "controllers/product_preview.php"
-            ?>
+
             <div class="products-container">
             <?php foreach($products as $product): ?>
 
@@ -88,6 +89,12 @@
                     <button class="add-to-cart">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </button>
+                    <div class="discount">
+                        <p class="discount-text">
+                            <?= $product[1]["promotion"]?>
+                        </p>
+                    </div>
+
                     <a href='views/details.php?id=<?=urlencode($product[1]["id"])?>&table=<?=$product[0]?>'>
                     <img src="<?= $product[1]["photo"]?>" alt="" />
                     <div class="product-info">

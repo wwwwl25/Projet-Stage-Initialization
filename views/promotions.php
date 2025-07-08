@@ -39,8 +39,8 @@
                     <button class="add-to-cart">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </button>
-                    <div class="promotion">
-                        <p class="promotion-text">
+                    <div class="discount">
+                        <p class="discount">
                             <?= $p['promotion'] ?>
                         </p>
                     </div>

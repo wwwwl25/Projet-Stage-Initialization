@@ -79,6 +79,12 @@ body {
 .back-link:hover {
     text-decoration: underline;
 }
+.details-discount{
+    font-size: 0.7em;
+    margin-left: 0.5em;
+    color: indianred;
+    border-radius: 50px;
+}
 @media (max-width:660px){
     .product-detail{
         flex-direction: column;

@@ -43,9 +43,9 @@ $result = product_display("vitamine");
                     <button class="add-to-cart">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </button>
-                    <div class="promotion">
-                        <p class="promotion-text">
-                            <?=$row["promotion"]?>
+                    <div class="discount">
+                        <p class="discount-text">
+                            <?= $row["promotion"]?>
                         </p>
                     </div>
                     <a href='details.php?id=<?=urlencode($row["id"])?>&table=vitamines'>
