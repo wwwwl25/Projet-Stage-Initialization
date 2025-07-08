@@ -138,3 +138,8 @@
 #sortSelect::-ms-expand {
   display: none;
 }
+.promotion{
+    margin-right: auto;
+    font-size: 0.9em;
+    color: indianred;
+}

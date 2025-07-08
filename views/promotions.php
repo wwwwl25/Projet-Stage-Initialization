@@ -1,4 +1,6 @@
-
+<?php
+    require_once '../controllers/promotions.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,8 +29,37 @@
     <option value="asc">Prix croissant</option>
     <option value="desc">Prix décroissant</option>
   </select>
-</div>
 
+
+</div>
+    <div class="products-container" >
+            <?php foreach ($promotions as $promotion) : ?>
+            <?php foreach ($promotion as $p) : ?>
+                <div class="product-card">
+                    <button class="add-to-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                    <div class="promotion">
+                        <p class="promotion-text">
+                            <?= $p['promotion'] ?>
+                        </p>
+                    </div>
+                    <a href='details.php?id=<?=urlencode($p["id"])?>&table=serums'>
+
+                        <img src="<?= $p["photo"]?>" alt="" />
+                        <div class="product-info">
+                            <p class="product-title">
+                                <?= $p["name"]?>
+                            </p>
+                            <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $p["prix"]) . " MAD" ?></p>
+                        </div>
+                    </a>
+                </div>
+
+
+           <?php endforeach;?>
+           <?php endforeach;?>
+    </div>
 </main>
 <?php require_once "utilities/footer.php"?>
 

@@ -45,6 +45,8 @@ $result = mysqli_query($db, $sql);
                         <button class="add-to-cart">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </button>
+
+
                         <a href='details.php?id=<?=urlencode($row["id"])?>&table=maquillage'>
 
                         <img src="<?= $row["photo"]?>" alt="" />
