@@ -1,11 +1,6 @@
 <?php
-require_once '../Connect.php';
-
-$connect = new Connect();
-$db = $connect->conn;
-
-$sql = "SELECT id, name, description, prix, photo FROM bio";
-$result = mysqli_query($db, $sql);
+require_once '../controllers/product_display.php';
+$result = product_display("bio");
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +39,12 @@ $result = mysqli_query($db, $sql);
                         <button class="add-to-cart">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </button>
+                        <div class="promotion">
+                            <p class="promotion-text">
+                                <?= $row["promotion"]?>
+                            </p>
+                        </div>
+
                         <a href='details.php?id=<?=urlencode($row["id"])?>&table=bio'>
 
                         <img src="<?= $row["photo"]?>" alt="" />
