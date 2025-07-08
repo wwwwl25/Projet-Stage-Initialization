@@ -30,6 +30,16 @@ $result = mysqli_query($db, $sql);
     <div class="search-input">
         <input type="text" id="searchInput" placeholder="Rechercher un produit" style="padding: 10px; width: 300px; font-size: 16px;">
     </div>
+  <div class="filter-container">
+  <select id="sortSelect">
+    <option value="">-- Trier par prix --</option>
+    <option value="asc">Prix croissant</option>
+    <option value="desc">Prix décroissant</option>
+  </select>
+</div>
+
+
+
     <div class="products-container" >
     <?php  if (mysqli_num_rows($result) > 0) : ?>
      <?php while ($row = mysqli_fetch_assoc($result)) : ?>
@@ -60,5 +70,6 @@ $result = mysqli_query($db, $sql);
 <?php require_once "utilities/footer.php"?>
 
     <script src="../scripts/recherche.js"></script>
+     <script src="../scripts/filter.js"></script>
 </body>
 </html>

@@ -21,10 +21,18 @@
     <div class="search-input">
         <input type="text" id="searchInput" placeholder="Rechercher un produit" style="padding: 10px; width: 300px; font-size: 16px;">
     </div>
+          <div class="filter-container">
+  <select id="sortSelect">
+    <option value="">-- Trier par prix --</option>
+    <option value="asc">Prix croissant</option>
+    <option value="desc">Prix décroissant</option>
+  </select>
+</div>
 
 </main>
 <?php require_once "utilities/footer.php"?>
 
 <script src="../scripts/recherche.js"></script>
+<script src="../scripts/filter.js"></script>
 </body>
 </html>
