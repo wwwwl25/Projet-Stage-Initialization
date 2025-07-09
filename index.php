@@ -12,11 +12,15 @@
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/product.css">
+    <link rel="stylesheet" href="styles/cart.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
+    <script src="scripts/cart.js"></script>
 </head>
 <body>
     <?php require 'views/utilities/nav-bar.php' ?>
+    <?php require 'views/utilities/cart.php'?>
+
     <main class="main-content">
         <section id="image-slider" class="splide">
             <div class="splide__track">
@@ -164,18 +168,19 @@
             ?>
             <div class="products-container">
                 <?php foreach($products as $row): ?>
+                    <?php $row = $row[1]?>
                         <div class="product-card">
-                            <button class="add-to-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
-                            <a href='views/details.php?id=<?=urlencode($row[1]["id"])?>&table=<?=$row[0]?>'>
+                            <?php $cartText = "<i class='fa-solid fa-cart-shopping'></i>";
+                            require "views/utilities/add_to_cart.php"
+                            ?>
+                            <a href='views/details.php?id=<?=urlencode($row["id"])?>&table=<?=$row?>'>
 
-                            <img src="<?= $row[1]["photo"]?>" alt="" />
+                            <img src="<?= $row["photo"]?>" alt="" />
                             <div class="product-info">
                                 <p class="product-title">
-                                    <?= $row[1]["name"]?>
+                                    <?= $row["name"]?>
                                 </p>
-                                <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $row[1]["prix"]) . " MAD" ?></p>
+                                <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $row["prix"]) . " MAD" ?></p>
 
                             </div>
                             </a>
@@ -192,7 +197,6 @@
         </section>
     </main>
     <?php require 'views/utilities/footer.php'?>
-
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
 
     <script src="scripts/home.js"></script>
