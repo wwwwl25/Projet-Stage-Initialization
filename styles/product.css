@@ -60,23 +60,42 @@
     z-index: 10;
 }
 
-.add-to-cart::after {
-    content: '';
+
+.add-to-cart:hover::before {
+    opacity: 1;
+}
+.added_to_cart{
+    cursor: pointer;
+    top: 0;
+    right:0;
     position: absolute;
-    bottom: 115%; /* slightly below the tooltip text */
+    background: transparent;
+    border: none !important;
+    outline: none !important ;
+    font-size: 1.25em;
+    color: greenyellow !important;
+    opacity: 1 !important;
+    border: none;
+}
+.added_to_cart::before {
+    content: 'View cart';
+    position: absolute;
+    bottom: 125%; /* above the element */
     left: 50%;
     transform: translateX(-50%);
-    border-width: 6px;
-    border-style: solid;
-    border-color: #444 transparent transparent transparent;
+    background-color: #444;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 13px;
     opacity: 0;
-    transition: opacity 0.2s ease;
     pointer-events: none;
-    z-index: 9;
+    transition: opacity 0.2s ease;
+    z-index: 10;
 }
 
-.add-to-cart:hover::before,
-.add-to-cart:hover::after {
+.added_to_cart:hover::before {
     opacity: 1;
 }
 

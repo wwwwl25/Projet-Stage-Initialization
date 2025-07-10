@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/product.css">
     <link rel="stylesheet" href="styles/cart.css">
+    <script src="scripts/cart.js" defer></script>
+    <script src="scripts/add_to_cart.js" defer></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
-    <script src="scripts/cart.js"></script>
+
 </head>
 <body>
     <?php require 'views/utilities/nav-bar.php' ?>
@@ -88,24 +90,27 @@
 
             <div class="products-container">
             <?php foreach($products as $row): ?>
+                <?php
+            $t = $row[0];
+                $row = $row[1];?>
 
                 <div class="product-card">
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </button>
+                    <?php $cartText = "<i class='fa-solid fa-cart-shopping'></i>";
+                    require "views/utilities/add_to_cart.php"
+                    ?>
                     <div class="discount">
                         <p class="discount-text">
-                            <?= $row[1]["promotion"]?>
+                            <?= $row["promotion"]?>
                         </p>
                     </div>
 
-                    <a href='views/details.php?id=<?=urlencode($row[1]["id"])?>&table=<?=$row[0]?>'>
-                    <img src="<?= $row[1]["photo"]?>" alt="" />
+                    <a href='views/details.php?id=<?=urlencode($row["id"])?>&table=<?=$t?>'>
+                    <img src="<?= $row["photo"]?>" alt="" />
                     <div class="product-info">
                         <p class="product-title">
-                            <?= $row[1]["name"]?>
+                            <?= $row["name"]?>
                         </p>
-                        <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $row[1]["prix"]) . " MAD" ?></p>
+                        <p class="product-price"> <?= preg_replace('/[^0-9.]/', '', $row["prix"]) . " MAD" ?></p>
                     </div>
                     </a>
                 </div>
@@ -168,12 +173,14 @@
             ?>
             <div class="products-container">
                 <?php foreach($products as $row): ?>
-                    <?php $row = $row[1]?>
-                        <div class="product-card">
+                    <?php
+                    $t = $row[0];
+                    $row = $row[1];?>
+                    <div class="product-card">
                             <?php $cartText = "<i class='fa-solid fa-cart-shopping'></i>";
                             require "views/utilities/add_to_cart.php"
                             ?>
-                            <a href='views/details.php?id=<?=urlencode($row["id"])?>&table=<?=$row?>'>
+                            <a href='views/details.php?id=<?=urlencode($row["id"])?>&table=<?=$t?>'>
 
                             <img src="<?= $row["photo"]?>" alt="" />
                             <div class="product-info">

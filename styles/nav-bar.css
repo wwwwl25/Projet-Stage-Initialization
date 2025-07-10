@@ -73,12 +73,10 @@ body {
     order: 3;
 
 }
-.icons a {
+.icons .login-btn, .icons .cart-btn{
+    cursor: pointer;
     width: 25px;
     color: black;
-}
-.icons a[title="signup/login"]{
-    /*background: red;*/
 }
 /* hide search input on mobile */
 .search-wrapper {

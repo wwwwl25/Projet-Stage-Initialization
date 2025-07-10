@@ -15,9 +15,14 @@ $result = product_display("vitamines");
     <link rel="stylesheet" href="../styles/nav-bar.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/boutique.css">
+    <link rel="stylesheet" href="../styles/cart.css">
+    <script src="../scripts/cart.js" defer></script>
+    <script src="../scripts/add_to_cart.js" defer></script>
 </head>
 <body>
 <?php require_once "utilities/nav-bar.php"?>
+<?php require 'utilities/cart.php'?>
+
     <main>
         <div class="text">
             <h1>Vitamines</h1>

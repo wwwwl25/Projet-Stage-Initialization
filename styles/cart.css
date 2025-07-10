@@ -37,9 +37,11 @@ i{
 .item{
     padding: 1em 1.75em;
     display: flex;
+    gap: 0.5em;
     align-items: center;
     img{
-        width: 100px;
+        width: 80px;
+
         object-fit: cover;
 
     }
@@ -102,4 +104,8 @@ i{
         background: black;
         color: white;
     }
+}
+.items-counter{
+    font-size: 0.8em;
+    margin-left: 0.3em;
 }

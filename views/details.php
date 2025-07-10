@@ -35,9 +35,13 @@ $product = mysqli_fetch_assoc($result);
     <link rel="stylesheet" href="../styles/details.css">
     <link rel="stylesheet" href="../styles/nav-bar.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/cart.css">
+    <script src="../scripts/cart.js" defer></script>
+    <script src="../scripts/add_to_cart.js" defer></script>
 </head>
 <body>
 <?php require_once "utilities/nav-bar.php"?>
+<?php require_once "utilities/cart.php"?>
 <main>
 <div class="product-detail">
     <div class="image-section">
