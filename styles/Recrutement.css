@@ -62,19 +62,12 @@
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
+    @media (max-width: 500px) {
       .container {
         flex-direction: column;
         padding: 0;
       }
-      .column {
-        flex: 1 1 100%;
-      }
-      .images-row {
-        flex-direction: column;
-      }
-      .images-row img {
-        width: 100%;
-        max-height: 180px;
-      }
+      
+     
     }
+    

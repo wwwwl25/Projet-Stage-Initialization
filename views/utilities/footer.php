@@ -20,9 +20,10 @@
 
     <div class="footer-bottom">
         <div class="footer-socials">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/message/BWYVCAQW6FLVE1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/_jtr_shop_?igsh=ODdjMWRlbjk3MXVr"  target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@jtr_shop" target="_blank"><i class="fab fa-tiktok"></i></a>
+
 
 
         </div>
