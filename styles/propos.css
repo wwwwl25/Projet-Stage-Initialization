@@ -1,0 +1,104 @@
+/* أساسيات */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f8f8;
+  color: #222;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 80px auto 0 auto; /* المسافة بين navbar والصور */
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.column {
+  background: white;
+  flex: 1 1 450px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.column h2 {
+  margin-bottom: 15px;
+  color: #111;
+  font-size: 28px;
+}
+
+.column img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.column img:hover {
+  transform: scale(1.05);
+}
+
+.column p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive improvements */
+@media (max-width: 992px) {
+  .container {
+    gap: 30px;
+    padding: 0 15px;
+  }
+
+  .column {
+    flex: 1 1 100%; /* عمود واحد */
+    max-width: 100%;
+  }
+  
+  .column h2 {
+    font-size: 24px;
+  }
+
+  .column p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin: 10px;
+  }
+  
+  .container {
+    margin: 40px auto 0 auto;
+    padding: 0 10px;
+  }
+
+  .column {
+    padding: 20px;
+  }
+
+  .column h2 {
+    font-size: 20px;
+  }
+
+  .column img {
+    max-height: 180px;
+  }
+
+  .column p {
+    font-size: 14px;
+  }
+}
