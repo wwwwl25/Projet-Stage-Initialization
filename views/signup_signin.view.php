@@ -13,7 +13,6 @@
     <?php require 'utilities/nav-bar.php';?>
     <main>
     <div class="wrapper">
-        <img src="../images/img.png" alt="leaves">
         <h2 class="text-right">Welcome</h2>
         <div class="form-wrapper login">
             <form action="../controllers/signin.php" method="post">
@@ -38,7 +37,7 @@
 <!--                    <a href="#">Forgot Password?</a>-->
 <!--                </div>-->
 
-                <button type="submit">Login</button>
+                <button type="submit" style="color:black" >Login</button>
                 <p style="color:darkred;margin-top:10px;"><?php echo isset($_GET['signin_error']) ? $_GET['signin_error'] : '';?></p>
 
 
@@ -69,7 +68,7 @@
                     </span>
                     <input type="password" placeholder="Password"  name="password" required>
                 </div>
-                <button type="submit">Register</button>
+                <button type="submit" style="color:black">Register</button>
                 <div class="sign-link">
                     <p>Already have an account? <a href="#" onclick="loginActive()">Login</a></p>
                 </div>

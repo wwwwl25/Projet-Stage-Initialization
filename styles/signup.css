@@ -19,7 +19,7 @@ body {
     position: relative;
     width: 800px;
     height: 500px;
-    background: linear-gradient(90deg, #54880e, #f2f2f2);
+    background: linear-gradient(90deg, #161616, #f2f2f2);
     border-radius: 50px;
     box-shadow: 0 0 60px rgba(0, 0, 0, .3);
     padding: 60px;
@@ -146,7 +146,7 @@ button {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #4CAF50; /* vert feuille */
+  background-color: #161616; /* vert feuille */
   color: white;
   padding: 12px 25px;
   border-radius: 5px;
