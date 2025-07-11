@@ -1,4 +1,6 @@
-<?php require_once "controllers/product_preview.php"
+<?php
+session_start();
+require_once "controllers/product_preview.php"
 ?>
 <!doctype html>
 <html lang="en">

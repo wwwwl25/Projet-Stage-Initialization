@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once '../controllers/product_display.php';
+$t = "vitamines";
 $result = product_display("vitamines");
 ?>
 

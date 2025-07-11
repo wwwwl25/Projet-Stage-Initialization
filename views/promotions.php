@@ -1,5 +1,6 @@
 <?php
     require_once '../controllers/promotions.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,6 +41,7 @@
     <div class="products-container" >
             <?php foreach ($promotions as $promotion) : ?>
             <?php foreach ($promotion as $p) : ?>
+                <?php $row = $p?>
                 <div class="product-card">
                     <?php $cartText = "<i class='fa-solid fa-cart-shopping'></i>";
                     require "utilities/add_to_cart.php"

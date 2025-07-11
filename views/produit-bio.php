@@ -1,5 +1,8 @@
 <?php
+session_start();
 require_once '../controllers/product_display.php';
+$t = "bio";
+
 $result = product_display("bio");
 ?>
 

@@ -1,5 +1,9 @@
 <?php
+session_start();
+
 require_once '../controllers/product_display.php';
+$t = "serums";
+
 $result = product_display("serums");
 ?>
 <!DOCTYPE html>

@@ -23,6 +23,10 @@
    right: 400px;
 
 }
+.items-container{
+    overflow: scroll;
+    height: 75%;
+}
 i{
     cursor: pointer;
 }
