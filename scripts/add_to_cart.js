@@ -103,7 +103,7 @@ cart.addEventListener("click", e=>{
         items_container.querySelector(`.item[data-product-id='${product_id}']`).remove();
         const targetBtn = document.querySelectorAll(`.add-to-cart[data-product-id='${product_id}']`);
         targetBtn.forEach(item => {
-            if (item) {
+            if (item && !window.location.href.includes("/Projet-Stage-Initialization/views/details")) {
                 console.log("item exists")
                 item.classList.remove("added_to_cart");
                 item.innerHTML = `<i class="fa-solid fa-cart-shopping"></i>`;
