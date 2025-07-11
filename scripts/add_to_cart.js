@@ -26,7 +26,7 @@ function updateCounters(){
     item_counter = 0;
     for(key in cart_tracker) {
         const item = cart_tracker[key];
-        total_price += Number(item["price"]);
+        total_price += Number(item["price"]*item["quantity"]);
         item_counter += Number(item["quantity"]);
     }
     sous_total.textContent = total_price.toFixed(2);
@@ -74,11 +74,11 @@ function add_item_cartDOM(){
                     <div class="bottom">
                         <div class="item-addition">
                            <button class="minus">-</button>
-                           <p class="item-quantity">1</p>
+                           <p class="item-quantity">${item['quantity']}</p>
                            <button class="plus">+</button>
                         </div>
                         <p class="item-price">
-                            <span>${item['price']}</span>MAD
+                            <span>${item['price'] * item['quantity']}</span>MAD
                         </p>
                     </div>
                 </div>
@@ -116,7 +116,27 @@ cart.addEventListener("click", e=>{
         updateCounters();
 
     }
-})
+    if(e.target.classList.contains("plus") || e.target.classList.contains("minus")){
+        const p_id = e.target.closest("[data-product-id]").dataset.productId;
+
+        if(e.target.classList.contains("plus")){
+            console.log('plus');
+            cart_tracker['item_'+p_id].quantity += 1;
+
+        }
+        if(e.target.classList.contains("minus") && cart_tracker['item_'+p_id].quantity >1 ){
+            console.log('minus');
+            cart_tracker['item_'+p_id].quantity -= 1;
+
+
+
+    }
+        add_item_cartDOM();
+        saveCartToLocalStorage();
+        send_to_cartPHP();
+        updateCounters();
+
+}});
 
 add_to_cart_btns.forEach(btn =>{
     btn.addEventListener("click", e =>{
