@@ -40,8 +40,11 @@ function add_item(e){
     const table = current_item.dataset.table;
     const productId = String(current_item.dataset.productId);
     cart_tracker[`item_${productId}`] = {'id':productId,'price': price, 'image': image, 'name': name, 'quantity': 1};
-    const exists = cart_php.some(([t, id]) => t === table && id === Number(productId));
-    if (!exists) cart_php.push([table, Number(productId)]);
+    const exists = cart_php.some(([t, id]) => `${id}_${t}` === productId);
+    if (!exists) {
+        cart_php.push([table, Number(productId.split("_")[0])]);
+    }
+
     saveCartToLocalStorage();
     send_to_cartPHP();
     if(!window.location.href.includes("/Projet-Stage-Initialization/views/details")){
@@ -94,7 +97,7 @@ cart.addEventListener("click", e=>{
         const parent = e.target.closest(".item");
         const product_id =  parent.dataset.productId;
         delete cart_tracker[`item_${product_id}`];
-        cart_php = cart_php.filter(([table, id]) => String(id) !== product_id);
+        cart_php = cart_php.filter(([table, id]) => `${id}_${table}` !== product_id);
         saveCartToLocalStorage();
         send_to_cartPHP()
         items_container.querySelector(`.item[data-product-id='${product_id}']`).remove();

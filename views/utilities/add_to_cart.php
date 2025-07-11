@@ -15,7 +15,7 @@ if(isset($_SESSION["cart"])){
     data-title = '<?= $row["name"]?>'
     data-photo = '<?= $row["photo"]?>'
     data-price = '<?= $row["prix"]?>'
-    data-product-id = '<?= $row["id"]?>'
+    data-product-id = '<?= $row["id"] . "_". $t?>'
     class="add-to-cart <?php echo $exists ? 'added_to_cart' : ''?>">
     <?php if($exists):?>
         <i class="fa-solid fa-square-check"></i>

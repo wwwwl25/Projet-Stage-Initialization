@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../Connect.php';
 
 if (!isset($_GET['id']) || !isset($_GET['table'])) {
@@ -13,7 +15,7 @@ $table = $_GET['table'];
 if (!in_array($table, ['serums', 'vitamines','bio','maquillage'])) {
     die("Table invalide.");
 }
-
+$t = $table;
 $sql = "SELECT * FROM $table WHERE id = $id";
 $result = mysqli_query($db, $sql);
 

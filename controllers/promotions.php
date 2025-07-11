@@ -8,7 +8,7 @@ $query = "SELECT * FROM $tableName WHERE promotion IS NOT NULL AND promotion <> 
 
 $result = mysqli_fetch_all(mysqli_query($conn, $query), MYSQLI_ASSOC);
 
-return $result;
+return [$result, $tableName];
 }
 
 $promotions = array(
