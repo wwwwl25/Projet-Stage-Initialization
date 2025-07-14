@@ -6,5 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
         cart.style.display = "none";
     })
     open_cart.addEventListener("click", e=>{
+        if(window.location.href.includes("Projet-Stage-Initialization/views/panier.php")){
+            window.location = 'http://localhost/Projet-Stage-Initialization/views/panier.php';
+        }
         cart.style.display = "block";
+
     })});

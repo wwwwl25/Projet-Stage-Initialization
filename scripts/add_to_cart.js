@@ -5,6 +5,7 @@ const add_to_cart_btns = document.querySelectorAll(".add-to-cart");
 const cart = document.querySelector(".cart");
 const items_container = document.querySelector(".items-container");
 const sous_total = document.querySelector(".sous-total-prix");
+const total_panierPHP = document.querySelector(".total-prix");
 const item_count = document.querySelector(".items-counter");
 let total_price = 0;
 let item_counter = 0;
@@ -30,6 +31,7 @@ function updateCounters(){
         item_counter += Number(item["quantity"]);
     }
     sous_total.textContent = total_price.toFixed(2);
+    total_panierPHP.textContent = total_price.toFixed(2);
     item_count.textContent = item_counter;
 }
 function add_item(e){
@@ -62,6 +64,13 @@ function add_item_cartDOM(){
     item_counter = 0;
 
     items_container.innerHTML = '';
+    if(window.location.href.includes("Projet-Stage-Initialization/views/panier.php")){
+        const hr = document.createElement("hr");
+        hr.style.width = '90%';
+        hr.style.margin = '0 auto';
+        hr.style.opacity = '0.3';
+        items_container.appendChild(hr);
+    }
     for(key in cart_tracker) {
         const item = cart_tracker[key];
         const itemElement = `<div class="item" data-product-id ="${String(item['id'])}">
@@ -82,7 +91,7 @@ function add_item_cartDOM(){
                         </p>
                     </div>
                 </div>
-            </div>`;
+            </div><hr style="width: 90% ;margin: 0 auto; opacity:0.3">`;
         total_price += Number(item["price"]);
         item_counter += Number(item["quantity"]);
         items_container.innerHTML += itemElement;
