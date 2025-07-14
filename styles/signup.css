@@ -163,4 +163,54 @@ button {
   90%  { opacity: 1; top: 20px; }
   100% { opacity: 0; top: 0px; }
 }
+/* Common message box style */
+.message, .success-message {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 0.3s ease-in-out;
+    max-width: 100%;
+}
 
+/* Error message */
+.message.error {
+    background-color: #fdecea;
+    color: #b71c1c;
+    border: 1px solid #f44336;
+}
+
+/* Success message */
+.success-message {
+    background-color: #e6f4ea;
+    color: #2e7d32;
+    border: 1px solid #4caf50;
+}
+
+.success-message svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Make message box stick to top */
+#msg-box {
+    position: absolute;
+    margin-bottom: 450px;
+    margin-left: 150px;
+}

@@ -121,7 +121,7 @@ require_once "controllers/product_preview.php"
             <?php endforeach;?>
             </div>
 
-        </section>
+        </section> 
         <section class="about">
             <h1>Votre boutique en ligne préférée au Maroc</h1>
             <h2>Services et avantages</h2>
