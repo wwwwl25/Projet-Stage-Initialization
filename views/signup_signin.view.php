@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +18,19 @@
     <main>
     <div class="wrapper">
         <h2 class="text-right">Welcome</h2>
+         <!-- Messages -->
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="message error" id="msg-box">
+                    <?php echo htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?>
+                </div>
+            <?php elseif (isset($_SESSION['success'])): ?>
+                <div class="success-message" id="msg-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                        <path d="M16 2a2 2 0 11-4 0 2 2 0 014 0zM7.03 10.58l-2.28-2.28a.75.75 0 10-1.06 1.06l2.8 2.79a.75.75 0 001.06 0l5.1-5.1a.75.75 0 10-1.06-1.06L7.03 10.58z"/>
+                    </svg>
+                    <?php echo htmlspecialchars($_SESSION['success']); unset($_SESSION['success']); ?>
+                </div>
+            <?php endif; ?>
         <div class="form-wrapper login">
             <form action="../controllers/signin.php" method="post">
                 <h2>Login</h2>
