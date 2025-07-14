@@ -1,106 +1,93 @@
-<?php
-session_start();
-require_once '../Connect.php';
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in</title>
+    <link rel="stylesheet" href="../styles/nav-bar.css" />
+    <link rel="stylesheet" href="../styles/signup.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+</head>
+<body>
+    <?php require '../views/utilities/nav-bar.php'; ?>
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+    <main>
+        <div class="wrapper">
+            <h2 class="text-right">Welcome</h2>
 
-require_once '../PHPMailer-master/src/Exception.php';
-require_once '../PHPMailer-master/src/PHPMailer.php';
-require_once '../PHPMailer-master/src/SMTP.php';
+            <!-- Messages -->
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="message error" id="msg-box">
+                    <?php echo htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?>
+                </div>
+            <?php elseif (isset($_SESSION['success'])): ?>
+                <div class="success-message" id="msg-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                        <path d="M16 2a2 2 0 11-4 0 2 2 0 014 0zM7.03 10.58l-2.28-2.28a.75.75 0 10-1.06 1.06l2.8 2.79a.75.75 0 001.06 0l5.1-5.1a.75.75 0 10-1.06-1.06L7.03 10.58z"/>
+                    </svg>
+                    <?php echo htmlspecialchars($_SESSION['success']); unset($_SESSION['success']); ?>
+                </div>
+            <?php endif; ?>
 
-try {
-    $sql = new Connect();
-    $db = $sql->conn;
-} catch (mysqli_sql_exception $e) {
-    $_SESSION['error'] = "❌ Impossible de se connecter à la base de données.";
-    header('Location: ../views/signup_signin.view.php');
-    exit();
-}
+            <!-- Login Form -->
+            <div class="form-wrapper login">
+                <form action="../controllers/signin.php" method="post">
+                    <h2>Login</h2>
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'] ?? '';
-    $password = $_POST['password'] ?? '';
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" name="email" placeholder="Email" required />
+                    </div>
 
-    if (isset($_POST['name'])) {
-        // Inscription
-        $name = $_POST['name'];
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" name="password" placeholder="Password" required />
+                    </div>
 
-        $check = $db->query("SELECT * FROM registration WHERE email = '". $db->real_escape_string($email) ."'");
-        if ($check->num_rows > 0) {
-            $_SESSION['error'] = '❌ Email déjà inscrit. Essayez de vous connecter.';
-        } else {
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            $insert = $db->query("INSERT INTO registration (name, email, password) VALUES ('". $db->real_escape_string($name) ."', '". $db->real_escape_string($email) ."', '$hashedPassword')");
+                    <button type="submit">Login</button>
 
-            if ($insert) {
-                $_SESSION['success'] = "✅ Inscription réussie. Un email vous a été envoyé.";
+                    <div class="sign-link">
+                        <p>Don't have an account? <a href="#" onclick="registerActive()">Register</a></p>
+                    </div>
+                </form>
+            </div>
 
-                // Email admin
-                try {
-                    $adminMail = new PHPMailer(true);
-                    $adminMail->CharSet = 'UTF-8';
-                    $adminMail->isSMTP();
-                    $adminMail->Host = 'smtp.gmail.com';
-                    $adminMail->SMTPAuth = true;
-                    $adminMail->Username = 'saadiaabdilah@gmail.com';
-                    $adminMail->Password = 'mawy moxl ugun osia'; // mot de passe app
-                    $adminMail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-                    $adminMail->Port = 465;
+            <!-- Register Form -->
+            <div class="form-wrapper register">
+                <form action="../controllers/signup.php" method="post">
+                    <h2>Registration</h2>
 
-                    $adminMail->setFrom('saadiaabdilah@gmail.com', 'Form Bot');
-                    $adminMail->addAddress('saadiaabdilah@gmail.com', 'Admin');
-                    $adminMail->isHTML(true);
-                    $adminMail->Subject = 'Nouvelle inscription';
-                    $adminMail->Body = "<p><strong>Nom:</strong> $name</p><p><strong>Email:</strong> $email</p>";
-                    $adminMail->send();
-                } catch (Exception $e) {
-                    $_SESSION['error'] = "❌ Erreur email admin : " . $adminMail->ErrorInfo;
-                }
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" name="name" placeholder="Full Name" required />
+                    </div>
 
-                // Email utilisateur
-                try {
-                    $userMail = new PHPMailer(true);
-                    $userMail->CharSet = 'UTF-8';
-                    $userMail->isSMTP();
-                    $userMail->Host = 'smtp.gmail.com';
-                    $userMail->SMTPAuth = true;
-                    $userMail->Username = 'saadiaabdilah@gmail.com';
-                    $userMail->Password = 'ckpj coqa icnp rpiv'; // mot de passe app
-                    $userMail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-                    $userMail->Port = 465;
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" name="email" placeholder="Email" required />
+                    </div>
 
-                    $userMail->setFrom('saadiaabdilah@gmail.com', 'JTR_Shop');
-                    $userMail->addAddress($email, $name);
-                    $userMail->isHTML(true);
-                    $userMail->Subject = '🎉 Félicitations pour votre inscription !';
-                    $userMail->Body = "<h2>Bienvenue $name !</h2><p>Merci pour votre inscription sur <strong>JTR_Shop</strong>.</p><p>📧 Email: $email</p>";
-                    $userMail->send();
-                } catch (Exception $e) {
-                    $_SESSION['error'] = "❌ Erreur email utilisateur : " . $userMail->ErrorInfo;
-                }
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" name="password" placeholder="Password" required />
+                    </div>
 
-            } else {
-                $_SESSION['error'] = "❌ Erreur lors de l'inscription.";
-            }
-        }
-    } else {
-        // Connexion
-        $check = $db->query("SELECT * FROM registration WHERE email = '". $db->real_escape_string($email) ."'");
-        if ($check->num_rows > 0) {
-            $user = $check->fetch_assoc();
-            if (password_verify($password, $user['password'])) {
-                $_SESSION['user'] = $user;
-                $_SESSION['success'] = "✅ Connexion réussie. Bienvenue " . $user['name'] . " !";
-            } else {
-                $_SESSION['error'] = "❌ Mot de passe incorrect.";
-            }
-        } else {
-            $_SESSION['error'] = "❌ Email non trouvé.";
-        }
-    }
+                    <button type="submit">Register</button>
 
-    header('Location: ../views/signup_signin.view.php');
-    exit();
-}
-?>
+                    <div class="sign-link">
+                        <p>Already have an account? <a href="#" onclick="loginActive()">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <?php require_once "utilities/footer.php"; ?>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../scripts/signup.js"></script>
+</body>
+</html>
