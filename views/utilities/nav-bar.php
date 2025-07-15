@@ -23,11 +23,15 @@
 
 
         <div class="icons">
-            <a class="login-btn" href="/Projet-Stage-Initialization/views/signup_signin.view.php" title="signup/login">
-
+            <a class="login-btn" style="margin-top: 0.5em" href="<?php echo isset($_SESSION['user_name']) && isset($_SESSION['user_email']) ? '/Projet-Stage-Initialization/views/user1.php' : '/Projet-Stage-Initialization/views/signup_signin.view.php'; ?>" title="signup/login">
+            <?php if(isset($_SESSION['user_name']) && isset($_SESSION['user_email'])) : ?>
                 <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M5.121 17.804A4 4 0 016 15.5h12a4 4 0 01.879 2.304M12 11a4 4 0 100-8 4 4 0 000 8z" />
                 </svg>
+                <?php else:?>
+                <i class="fa-solid fa-arrow-right-to-bracket" style="font-size: 1.5em; margin-bottom: 0.5em"></i>
+
+            <?php endif;?>
             </a>
             <div title="shopping cart" class="cart-btn">
                 <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
