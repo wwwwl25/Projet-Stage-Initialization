@@ -36,7 +36,7 @@ function updateCounters(){
     if(total_panierPHP) {
         total_panierPHP.textContent = total_price.toFixed(2);
     }
-    item_count.textContent = item_counter;
+    if(item_count) item_count.textContent = item_counter;
     nav_bar_item_count.textContent = item_counter;
 }
 

@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['user_email'] = $user['email'];
                 $_SESSION['user_name'] = $user['name'];
-                header("Location: ../views/user1.php");
+                header("Location: ../views/user.php");
                 exit();
             } else {
                 header("Location: ../views/signup_signin.view.php?password_error=Your password is incorrect !");
