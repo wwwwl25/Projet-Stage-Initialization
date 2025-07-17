@@ -78,10 +78,20 @@ body {
     }
 
 }
+.cart-btn{
+    position: relative;
+}
+.cart-btn sup {
+    position: absolute;
+    top: -7px;
+    font-size: 14px;
+    right: -20px;
+}
 .icons .login-btn, .icons .cart-btn{
     cursor: pointer;
     width: 25px;
     color: black;
+
 }
 /* hide search input on mobile */
 .search-wrapper {

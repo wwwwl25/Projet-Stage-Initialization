@@ -36,9 +36,10 @@
             <div title="shopping cart" class="cart-btn">
                 <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6h13l-1.5-6M9 21a1 1 0 11-2 0 1 1 0 012 0zm10 0a1 1 0 11-2 0 1 1 0 012 0z" />
-                </svg>
+                </svg>   <sup>1</sup>
             </div>
         </div>
+
     </div>
 
 

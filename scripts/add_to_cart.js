@@ -7,6 +7,7 @@ const items_container = document.querySelector(".items-container");
 const sous_total = document.querySelector(".sous-total-prix");
 const total_panierPHP = document.querySelector(".total-prix");
 const item_count = document.querySelector(".items-counter");
+const nav_bar_item_count = document.querySelector('.cart-btn sup');
 let total_price = 0;
 let item_counter = 0;
 
@@ -36,6 +37,7 @@ function updateCounters(){
         total_panierPHP.textContent = total_price.toFixed(2);
     }
     item_count.textContent = item_counter;
+    nav_bar_item_count.textContent = item_counter;
 }
 
 function add_item(e){
@@ -85,10 +87,14 @@ function add_item_cartDOM(){
     for(key in cart_tracker) {
         const item = cart_tracker[key];
         const itemElement = `<div class="item" data-product-id ="${String(item['id'])}">
-                <img src="${item['image']}" alt="item-image" id="item-image">
+                <a href='/Projet-Stage-Initialization/views/details.php?id=${String(item['id']).split('_')[0]}&table=${String(item['id']).split('_')[1]}'>
+                    <img src="${item['image']}" alt="item-image" id="item-image">
+                </a>
                 <div class="item-info">
                     <div class="top">
-                        <p class="item-title">${item['name']}</p>
+                        <a href='/Projet-Stage-Initialization/views/details.php?id=${String(item['id']).split('_')[0]}&table=${String(item['id']).split('_')[1]}'>
+                            <p class="item-title">${item['name']}</p>
+                        </a>
                         <i class="fa-solid fa-close item-remove"></i>
                     </div>
                     <div class="bottom">

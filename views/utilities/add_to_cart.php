@@ -2,7 +2,7 @@
 $exists = false;
 if(isset($_SESSION["cart"])){
     foreach($_SESSION["cart"] as $item){
-        if($item['category'] == $t &&  $item['product_id'] == $row["id"]){
+        if($item['category'] == $t &&  $item['product_id'] == $row["id"] && !str_contains($_SERVER['REQUEST_URI'], 'details.php')){
             $exists = true;
         }
     }
