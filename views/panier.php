@@ -1,3 +1,6 @@
+<?php
+            session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,7 +25,6 @@
         <h1>Panier</h1>
         <p style="color: indianred">
             <?php
-            session_start();
 
             if (isset($_SESSION["denied"])) {
                 echo "<p style='color:indianred;'>{$_SESSION["denied"]}</p>";

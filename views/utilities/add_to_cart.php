@@ -1,9 +1,8 @@
 <?php
-    $compare = ["tableName"=>$t,"productID"=>$row["id"]];
 $exists = false;
 if(isset($_SESSION["cart"])){
     foreach($_SESSION["cart"] as $item){
-        if($item == $compare){
+        if($item['category'] == $t &&  $item['product_id'] == $row["id"]){
             $exists = true;
         }
     }
