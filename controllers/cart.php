@@ -49,7 +49,7 @@ if (isset($data["cart"])) {
                 $session_item["category"] === $item["tableName"]
             ) {
                 // if already exists, update quantity
-                $session_item["quantity"] += $item["quantity"];
+                $session_item["quantity"] = $item["quantity"];
                 $found = true;
                 break;
             }

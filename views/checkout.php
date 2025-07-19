@@ -7,10 +7,7 @@ if (!isset($_SESSION["user_email"])) {
     header("Location: $previous");
     exit;
 }
-echo "<pre>";
-var_dump($_SESSION);
-echo "</pre>";
-die();
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
