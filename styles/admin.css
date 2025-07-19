@@ -1,0 +1,90 @@
+/* ========== Tableau Admin ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #333;
+  color: #fff;
+}
+
+table tr:nth-child(even) {
+  background-color: #eee;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+h2 {
+    text-align: center;
+      margin-top: 40px;
+}
+/* ========== Formulaire Ajout/Modification ========== */
+form {
+  background-color: #fff;
+  padding: 20px;
+  margin: 30px auto; /* Centrage horizontal */
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #f2f2f2;
+}
+
+form button {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #444;
+}
+.category-form {
+  margin: 40px auto; /* centré + espace en haut/bas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+}
+

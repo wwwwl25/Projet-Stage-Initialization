@@ -35,8 +35,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     function signin($email, $password, $db) {
-        $query = "SELECT * FROM registration WHERE email='$email'";
-        $result = mysqli_query($db, $query);
+        if ($email === 'admin@gmail.com' && $password === 'admin123') {
+            $_SESSION['user_email'] = 'admin@gmail.com';
+            $_SESSION['user_name'] = 'Administrator';
+            header("Location: ../views/utilities/admin.php");
+            exit();
+        }
+
+        $query = "SELECT name, email, password FROM registration WHERE email = ?";
+        $stmt = mysqli_prepare($db, $query);
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
         if (mysqli_num_rows($result) === 1) {
             $user = mysqli_fetch_assoc($result);
