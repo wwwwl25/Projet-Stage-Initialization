@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $userMail->Host = 'smtp.gmail.com';
                     $userMail->SMTPAuth = true;
                     $userMail->Username = 'saadiaabdilah@gmail.com';
-                    $userMail->Password = 'ckpj coqa icnp rpiv'; // mot de passe app
+                    $userMail->Password = 'stqp imny ikcw ttyk'; // mot de passe app
                     $userMail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                     $userMail->Port = 465;
 
@@ -74,7 +74,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $userMail->addAddress($email, $name);
                     $userMail->isHTML(true);
                     $userMail->Subject = '🎉 Félicitations pour votre inscription !';
-                    $userMail->Body = "<h2>Bienvenue $name !</h2><p>Merci pour votre inscription sur <strong>JTR_Shop</strong>.</p><p>📧 Email: $email</p>";
+                    $userMail->Body = "
+    <div style='font-family: Arial, sans-serif; color: #333;'>
+        <h2 style='color: #2E86C1;'>Bienvenue sur JTR_Shop, $name !</h2>
+        <p>Nous sommes ravis de vous compter parmi nos nouveaux membres.</p>
+        <p>Votre compte a bien été créé avec succès. Vous pouvez dès à présent accéder à nos services et profiter de toutes nos fonctionnalités.</p>
+        <p><strong>Vos informations :</strong><br>Email : $email</p>
+        <p>Si vous avez des questions ou besoin d’assistance, notre équipe reste à votre écoute.</p>
+        <p style='margin-top: 30px;'>À très bientôt,<br><strong>L’équipe JTR_Shop</strong></p>
+    </div>";
+
                     $userMail->send();
                 } catch (Exception $e) {
                     $_SESSION['error'] = "❌ Erreur email utilisateur : " . $userMail->ErrorInfo;
