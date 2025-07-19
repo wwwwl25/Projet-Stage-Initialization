@@ -2,10 +2,6 @@
 session_start();
 require_once "controllers/product_preview.php";
 
-echo "<pre>";
-var_dump($_SESSION);
-echo "</pre>";
-die();
 ?>
 <!doctype html>
 <html lang="en">

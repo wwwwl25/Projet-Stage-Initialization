@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_email'])) {
 <head>
     <meta charset="UTF-8">
     <title>Mon Compte</title>
-    <link rel="stylesheet" href="../styles/dashboard.css">
+<!--    <link rel="stylesheet" href="../styles/dashboard.css">-->
     <link rel="stylesheet" href="../styles/cart.css">
     <script src="../scripts/cart.js" defer></script>
     <script src="../scripts/add_to_cart.js" defer></script>
@@ -36,12 +36,7 @@ if (!isset($_SESSION['user_email'])) {
         <button type="submit">🚪 Se déconnecter</button>
     </form>
 </main>
-<?php
-echo "<pre>";
-var_dump($_SESSION);
-echo "</pre>";
-die();
-?>
+
 <?php require 'utilities/footer.php'; ?>
 
 </body>

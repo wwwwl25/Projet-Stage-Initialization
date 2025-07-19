@@ -1,3 +1,5 @@
+session_to_localStorage();
+
 let cart_tracker = JSON.parse(localStorage.getItem("cart_tracker")) || {};
 let cart_php = JSON.parse(localStorage.getItem("cart_php")) || [];
 
@@ -17,6 +19,7 @@ function saveCartToLocalStorage() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
     add_item_cartDOM();
 });
 
@@ -122,6 +125,10 @@ cart.addEventListener("click", e => {
     if(e.target.classList.contains("item-remove")){
         const parent = e.target.closest(".item");
         const product_id =  parent.dataset.productId;
+        deleted_item({
+            category: String(product_id).split("_")[1],
+            product_id: Number(String(product_id).split("_")[0])
+        });
 
         delete cart_tracker[`item_${product_id}`];
         cart_php = cart_php.filter(([table, id, qty]) => `${id}_${table}` !== product_id);
@@ -134,7 +141,6 @@ cart.addEventListener("click", e => {
         const targetBtn = document.querySelectorAll(`.add-to-cart[data-product-id='${product_id}']`);
         targetBtn.forEach(item => {
             if (item && !window.location.href.includes("/Projet-Stage-Initialization/views/details")) {
-                console.log("item exists");
                 item.classList.remove("added_to_cart");
                 item.innerHTML = `<i class="fa-solid fa-cart-shopping"></i>`;
             } else {
@@ -197,4 +203,45 @@ function send_to_cartPHP(){
         .then(res => res.text())
         .then(data => console.log(data))
         .catch(err => console.error(err));
+}
+function deleted_item(deleted_item){
+    fetch("/Projet-Stage-Initialization/controllers/cart.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ deleted_item: deleted_item })
+    })
+        .then(res => res.text())
+        .then(data => console.log(data))
+        .catch(err => console.error(err));
+}
+function session_to_localStorage() {
+    // Check if we've already loaded session data in this browser session
+    const sessionLoaded = localStorage.getItem("session_loaded");
+    if (sessionLoaded === "true") {
+        console.log("Session already loaded, skipping...");
+        return;
+    }
+
+    fetch("/Projet-Stage-Initialization/controllers/get-cart.php")
+        .then(res => res.json())
+        .then(data => {
+            if (data.error === "not_logged_in") {
+                console.log("user not logged in");
+            } else {
+                const cart = data.cart;
+                const tracker = data.cart_tracker;
+                cart_tracker = tracker;
+                cart.forEach(item => {
+                    cart_php.push([item['category'], item['product_id'], Number(item['quantity'])]);
+                });
+
+                saveCartToLocalStorage()
+
+                add_item_cartDOM();
+                // Mark session as loaded
+                localStorage.setItem("session_loaded", "true");
+            }
+        });
 }
