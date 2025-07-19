@@ -36,7 +36,12 @@ if (!isset($_SESSION['user_email'])) {
         <button type="submit">🚪 Se déconnecter</button>
     </form>
 </main>
-
+<?php
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
+die();
+?>
 <?php require 'utilities/footer.php'; ?>
 
 </body>

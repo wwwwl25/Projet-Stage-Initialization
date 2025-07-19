@@ -1,5 +1,6 @@
 <?php
 require_once '../Connect.php';
+require_once 'cart_after_login.php';
 session_start();
 
 try {
@@ -34,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     function signin($email, $password, $db) {
-        $query = "SELECT name, email, password FROM registration WHERE email='$email'";
+        $query = "SELECT * FROM registration WHERE email='$email'";
         $result = mysqli_query($db, $query);
 
         if (mysqli_num_rows($result) === 1) {
@@ -43,6 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['user_email'] = $user['email'];
                 $_SESSION['user_name'] = $user['name'];
+                $_SESSION['user_id'] = $user['id'];
+                check_cart_exist($db, $user['id']);
+                push_cart_items($db);
                 header("Location: ../views/user.php");
                 exit();
             } else {

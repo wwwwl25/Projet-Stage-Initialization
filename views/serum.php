@@ -5,6 +5,7 @@ require_once '../controllers/product_display.php';
 $t = "serums";
 
 $result = product_display("serums");
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
