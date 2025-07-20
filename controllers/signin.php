@@ -37,8 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     function signin($email, $password, $db) {
         if ($email === 'admin@gmail.com' && $password === 'admin123') {
             $_SESSION['user_email'] = 'admin@gmail.com';
-            $_SESSION['user_name'] = 'Administrator';
-            header("Location: ../views/utilities/admin.php");
+           $_SESSION['user_name'] = 'Administrator';
+            $_SESSION['admin'] = 'admin';
+            header("Location: ../views/admin.php");
             exit();
         }
 

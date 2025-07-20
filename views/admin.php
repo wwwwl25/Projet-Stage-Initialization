@@ -1,5 +1,10 @@
 <?php
-require_once '../../Connect.php';
+session_start();
+if(!isset($_SESSION['admin'])) {
+    header('Location: /Projet-Stage-Initialization/');
+    exit();
+}
+require_once '../Connect.php';
 $db = new Connect();
 
 $allowedTables = ['bio', 'vitamines', 'serums', 'maquillage'];
@@ -49,19 +54,31 @@ $products = $db->conn->query("SELECT * FROM $table");
 <head>
     <meta charset="UTF-8">
     <title>Panneau Admin</title>
-      <link rel="stylesheet" href="/Projet-Stage-Initialization/styles/nav-bar.css">
-    <link rel="stylesheet" href="/Projet-Stage-Initialization/styles/product.css">
-    <link rel="stylesheet" href="/Projet-Stage-Initialization/styles/nav-bar.css">
-    <link rel="stylesheet" href="/Projet-Stage-Initialization/styles/footer.css">
-    <link rel="stylesheet" href="/Projet-Stage-Initialization/styles/boutique.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="/Projet-Stage-Initialization/styles/admin.css">
 </head>
 <body>
-<?php require_once "../utilities/nav-bar.php" ?>
-<h1>Panneau d'administration - <?= ucfirst($table) ?></h1>
+<header>
+    <nav>
+
+        <a href="/Projet-Stage-Initialization/views/admin.php" class="logo">
+            <p>Admin Panel</p>
+
+            JTR<i class="fa-solid fa-leaf"></i>SHOP
+        </a>
+        <form action="../controllers/logout.php" method="POST">
+            <input type="hidden" name="Admin">
+            <button type="submit">Logout</button>
+        </form>
+    </nav>
+</header>
+<h1 class="h1-xd">Panneau d'administration - <?= ucfirst($table) ?></h1>
 
 <!-- Choix de la table -->
-<form method="get" action="admin.php" class="category-form" >
+<form class='form1' method="get" action="admin.php" class="category-form" >
     <label for="table"  >Choisir une catégorie :</label>
     <select name="table" id="table" onchange="this.form.submit()">
         <?php foreach ($allowedTables as $t): ?>
@@ -106,7 +123,7 @@ $products = $db->conn->query("SELECT * FROM $table");
 <!-- Formulaire Ajout/Modification -->
 <h2><?= $productToEdit ? "Modifier le produit" : "Ajouter un nouveau produit" ?></h2>
 
-<form method="post" action="admin.php?table=<?= $table ?>">
+<form class="form" method="post" action="admin.php?table=<?= $table ?>">
     <input type="hidden" name="id" value="<?= $productToEdit ? $productToEdit['id'] : '' ?>">
 
     Nom : <br>
@@ -124,6 +141,5 @@ $products = $db->conn->query("SELECT * FROM $table");
     <button type="submit"><?= $productToEdit ? "Mettre à jour" : "Ajouter" ?></button>
 </form>
 
-<?php require_once "../utilities/footer.php" ?>
 </body>
 </html>
