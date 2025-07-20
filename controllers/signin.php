@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
-        $query = "SELECT name, email, password FROM registration WHERE email = ?";
+        $query = "SELECT * FROM registration WHERE email = ?";
         $stmt = mysqli_prepare($db, $query);
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
