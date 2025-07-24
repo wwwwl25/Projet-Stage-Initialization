@@ -19,4 +19,4 @@ $vita = preview("vitamines", $conn);
 $makeup = preview("maquillage", $conn);
 $bio = preview("bio", $conn);
 
-$products = array($serum[4], $vita[6], $makeup[5], $bio[1]);
+$products = array($serum[4], $vita[6], $makeup[1], $bio[1]);

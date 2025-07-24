@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../Connect.php';
-require_once 'dashboard.php';
 $connect = new Connect();
 $db = $connect->conn;
 
@@ -73,32 +72,52 @@ if ($result->num_rows == 1) {
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/details1.css">
     <title>Modifier mon profil</title>
+    <link rel="stylesheet" href="../styles/cart.css">
+    <link rel="stylesheet" href="../styles/product.css">
+    <link rel="stylesheet" href="../styles/nav-bar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/boutique.css">
+    <link rel="stylesheet" href="../styles/user.css">
+
+    <!-- Scripts JS -->
+    <script src="../scripts/cart.js" defer></script>
+    <script src="../scripts/add_to_cart.js" defer></script>
 </head>
 <body>
+<main>
+    <?php require 'utilities/nav-bar.php'; ?>
+    <?php require 'utilities/cart.php'; ?>
 
-<form action="" method="POST">
-    <label for="name">Nom complet :</label>
-    <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
+    <main class="dashboard-content">
+        <?php require "utilities/dashboard.php"; ?>
 
-    <label for="email">Adresse e-mail :</label>
-    <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+        <form action="" method="POST">
+            <label for="name">Nom complet :</label>
+            <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
 
-    <hr>
+            <label for="email">Adresse e-mail :</label>
+            <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
 
-    <h3>Changer le mot de passe (optionnel)</h3>
+            <hr>
 
-    <label for="mot_de_passe_actuel">Mot de passe actuel :</label>
-    <input type="password" name="mot_de_passe_actuel" id="mot_de_passe_actuel">
+            <h3>Changer le mot de passe (optionnel)</h3>
 
-    <label for="nouveau_mot_de_passe">Nouveau mot de passe :</label>
-    <input type="password" name="nouveau_mot_de_passe" id="nouveau_mot_de_passe">
+            <label for="mot_de_passe_actuel">Mot de passe actuel :</label>
+            <input type="password" name="mot_de_passe_actuel" id="mot_de_passe_actuel">
 
-    <label for="confirmer_mot_de_passe">Confirmer le nouveau mot de passe :</label>
-    <input type="password" name="confirmer_mot_de_passe" id="confirmer_mot_de_passe">
+            <label for="nouveau_mot_de_passe">Nouveau mot de passe :</label>
+            <input type="password" name="nouveau_mot_de_passe" id="nouveau_mot_de_passe">
 
-    <br><br>
-    <button type="submit" name="submit">Enregistrer</button>
-</form>
+            <label for="confirmer_mot_de_passe">Confirmer le nouveau mot de passe :</label>
+            <input type="password" name="confirmer_mot_de_passe" id="confirmer_mot_de_passe">
+
+            <br><br>
+            <button type="submit" name="submit">Enregistrer</button>
+        </form>
+    </main>
+</main>
+
+<?php require 'utilities/footer.php'; ?>
 
 </body>
 </html>
