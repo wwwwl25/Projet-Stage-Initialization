@@ -30,7 +30,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_checkout']) && i
         $email = $_POST['email'];
         $notes = $_POST['notes'];
         $payement_method = $_POST['payement_method'];
-        // $commandeId = 
         foreach ($commandes as $cmd) {
             $ctg = mysqli_real_escape_string($conn, $cmd['category']);
             $pId = (int)$cmd['product_id'];
@@ -38,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_checkout']) && i
             $address = mysqli_real_escape_string($conn, $_POST['adresse'] . "--" . $_POST['ville']);
 
             try {
-                $sql = "INSERT INTO commandes (id,
+                $sql = "INSERT INTO commandes (
         user_id, category, product_id, quantity, address,
         prenom, nom, ville, telephone, email, notes, payment_method, created_at
     ) VALUES (

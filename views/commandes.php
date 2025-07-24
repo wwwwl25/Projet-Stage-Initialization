@@ -1,6 +1,6 @@
 <?php
-require_once '../Connect.php';
 session_start();
+require_once '../Connect.php';
 
 if (!isset($_SESSION['user_email'])) {
     header("Location: signup_signin.view.php");
