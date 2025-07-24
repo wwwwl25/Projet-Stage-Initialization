@@ -3,7 +3,7 @@ session_start();
 require '../Connect.php';
 $db = new Connect;
 $conn = $db->conn;
-if (!isset($_SESSION["user_email"])) {
+if (!isset($_SESSION["user_email"]) || empty($_SESSION["cart"])) {
     $previous = $_SERVER['HTTP_REFERER'] ?? 'index.php'; // fallback if referrer is not set
     $_SESSION["denied"] = "You need an account to head to the checkout page.";
     header("Location: $previous");
@@ -162,11 +162,11 @@ $_SESSION['commandes'] =  [];
               <input type="hidden" name="total" id="total" value="<?=$total?>">
               <input type="hidden" name="sous_total" id="sous_total" value="<?=$total?>">
           <div class="paying-method">
-                  <input type="radio"  id="banc" name="payement_method"  required>
+                  <input type="radio"  id="banc" name="payement_method" value="Paiement bancaire" required>
                   <label for="banc">Virement bancaire</label>
                   <p>Veuillez nous contacter sur WhatsApp ou par email si vous souhaitez effectuer un paiement par virement bancaire.</p>
               <hr>
-                  <input type="radio" id="face-face" name="payement_method" required >
+                  <input type="radio" id="face-face" name="payement_method"  value="Paiement a la livraison" required >
                   <label for="face-face">Paiement à la livraison</label>
 
           </div>
