@@ -30,6 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_checkout']) && i
         $email = $_POST['email'];
         $notes = $_POST['notes'];
         $payement_method = $_POST['payement_method'];
+        // $commandeId = 
         foreach ($commandes as $cmd) {
             $ctg = mysqli_real_escape_string($conn, $cmd['category']);
             $pId = (int)$cmd['product_id'];
@@ -37,10 +38,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_checkout']) && i
             $address = mysqli_real_escape_string($conn, $_POST['adresse'] . "--" . $_POST['ville']);
 
             try {
-                $sql = "INSERT INTO commandes (
+                $sql = "INSERT INTO commandes (id,
         user_id, category, product_id, quantity, address,
         prenom, nom, ville, telephone, email, notes, payment_method, created_at
     ) VALUES (
+            
         $userID, '$ctg', $pId, $qty, '$address',
         '$prenom', '$nom', '$ville', '$telephone', '$email', '$notes', '$payement_method', NOW()
     )";
@@ -73,12 +75,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_checkout']) && i
             $ctg = mysqli_real_escape_string($conn, $cmd['category']);
                $pId = (int)$cmd['product_id'];
 
-            $sql = "SELECT name FROM $ctg WHERE id = $pId";
+            $sql = "SELECT * FROM $ctg WHERE id = $pId";
             $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
             $product = htmlspecialchars($result['name']);
             $qty = (int)$cmd['quantity'];
-            $price = (float)$cmd['price'] * $qty;
-            $subtotal = $_POST["sous_total"];
+            $price = $result['prix'];
+            $subtotal = $result['prix'] * $qty;
             $total = $_POST["total"];
 
             $orderRows .= "
