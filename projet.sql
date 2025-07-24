@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 20, 2025 at 02:31 AM
+-- Generation Time: Jul 24, 2025 at 04:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -68,7 +68,8 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `user_id`) VALUES
-    (15, 8);
+                                          (15, 8),
+                                          (16, 11);
 
 -- --------------------------------------------------------
 
@@ -89,7 +90,34 @@ CREATE TABLE `cart_items` (
 --
 
 INSERT INTO `cart_items` (`id`, `cart_id`, `product_id`, `quantity`, `category`) VALUES
-    (32, 15, 4, 10, 'serums');
+                                                                                     (32, 15, 4, 12, 'serums'),
+                                                                                     (38, 16, 4, 1, 'serums'),
+                                                                                     (39, 16, 5, 1, 'serums'),
+                                                                                     (40, 15, 8, 1, 'vitamines'),
+                                                                                     (41, 15, 6, 1, 'maquillage');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `commandes`
+--
+
+CREATE TABLE `commandes` (
+                             `id` int(11) NOT NULL,
+                             `user_id` int(11) NOT NULL,
+                             `category` varchar(100) NOT NULL,
+                             `product_id` int(11) NOT NULL,
+                             `quantity` int(11) NOT NULL,
+                             `address` varchar(255) NOT NULL,
+                             `prenom` varchar(100) NOT NULL,
+                             `nom` varchar(100) NOT NULL,
+                             `ville` varchar(100) NOT NULL,
+                             `telephone` varchar(20) NOT NULL,
+                             `email` varchar(255) NOT NULL,
+                             `notes` text DEFAULT NULL,
+                             `payment_method` varchar(50) NOT NULL,
+                             `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -144,7 +172,8 @@ INSERT INTO `registration` (`id`, `name`, `email`, `password`) VALUES
                                                                    (7, 'bbbbbbbb', 'walidjouker147@gmail.com', '$2y$10$W6ILUyQ2mIbUOkd6TpfbXO8.T1mqJDXBH'),
                                                                    (8, 'Jamal', 'jamal69@gmail.com', '$2y$10$JaqeMDkNBr5J4VFt.UF4hegG2ins7iw/WMM6hqlsEgAflVjBSYROS'),
                                                                    (9, 'KJK', 'hjhg@gmail.com', '$2y$10$DSqTMVQ7xTW10cQFY/bEy.fw1rtNR4xSgxDVRipne1f8VUHfMZg8u'),
-                                                                   (10, 'Admin', 'admin@gmail.com', 'admin123');
+                                                                   (10, 'Admin', 'admin@gmail.com', 'admin123'),
+                                                                   (11, 'kaw', 'paw@gmail.com', '$2y$10$v0vWvtL9Zn0ueUQ61LfpausYEHMC2Y0IF7OV2LvryP2.X8VS0fNFS');
 
 -- --------------------------------------------------------
 
@@ -229,6 +258,12 @@ ALTER TABLE `cart_items`
   ADD UNIQUE KEY `unique_item_per_cart` (`cart_id`,`product_id`,`category`);
 
 --
+-- Indexes for table `commandes`
+--
+ALTER TABLE `commandes`
+    ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `maquillage`
 --
 ALTER TABLE `maquillage`
@@ -266,13 +301,19 @@ ALTER TABLE `bio`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `cart_items`
 --
 ALTER TABLE `cart_items`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `commandes`
+--
+ALTER TABLE `commandes`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `maquillage`
@@ -284,7 +325,7 @@ ALTER TABLE `maquillage`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `serums`
