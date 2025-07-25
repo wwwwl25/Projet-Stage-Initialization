@@ -70,15 +70,15 @@ if ($result->num_rows == 1) {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/details1.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../styles/details_compte.css">
     <title>Modifier mon profil</title>
     <link rel="stylesheet" href="../styles/cart.css">
-    <link rel="stylesheet" href="../styles/product.css">
     <link rel="stylesheet" href="../styles/nav-bar.css">
     <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/boutique.css">
-    <link rel="stylesheet" href="../styles/user.css">
-
+    <link rel="stylesheet" href="../styles/dashboard_sidebar.css">
     <!-- Scripts JS -->
     <script src="../scripts/cart.js" defer></script>
     <script src="../scripts/add_to_cart.js" defer></script>
@@ -88,8 +88,8 @@ if ($result->num_rows == 1) {
     <?php require 'utilities/nav-bar.php'; ?>
     <?php require 'utilities/cart.php'; ?>
 
-    <main class="dashboard-content">
-        <?php require "utilities/dashboard.php"; ?>
+    <main class="dashboard_container">
+        <?php $title = "Détails du compte"; require "utilities/dashboard_sidebar.php"; ?>
 
         <form action="" method="POST">
             <label for="name">Nom complet :</label>

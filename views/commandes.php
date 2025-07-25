@@ -45,17 +45,30 @@ function calculerTotalCommande($commande_id, $db) {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mes Commandes</title>
     <link rel="stylesheet" href="../styles/nav-bar.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/dashboard_sidebar.css">
+
     <link rel="stylesheet" href="../styles/commandes.css">
+    <link rel="stylesheet" href="../styles/cart.css">
+
+    <!-- Scripts JS -->
+    <script src="../scripts/cart.js" defer></script>
+    <script src="../scripts/add_to_cart.js" defer></script>
 </head>
 <body>
 
 <?php require 'utilities/nav-bar.php'; ?>
+<?php require 'utilities/cart.php'; ?>
 
-<main class="commande-container">
-    <h1>Mes Commandes</h1>
+<main class="dashboard_container">
+    <?php $title = "Mes commandes";
+    require 'utilities/dashboard_sidebar.php' ?>
+    <section class="dashboard-content ">
 
     <?php
     $sql = "SELECT id, created_at FROM commandes WHERE user_id = $user_id ORDER BY created_at DESC";
@@ -80,6 +93,7 @@ function calculerTotalCommande($commande_id, $db) {
         }
     }
     ?>
+</section>
 </main>
 
 <?php require 'utilities/footer.php'; ?>
